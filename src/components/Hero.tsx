@@ -6,16 +6,12 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-cinema-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(34,211,238,0.06)_0%,_transparent_60%)]" />
-
-      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,#0a0a0c_0%,#0f0f14_50%,#0a0a0c_100%)]" />
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+          background:
+            "radial-gradient(ellipse 600px 400px at 30% 50%, rgba(232,197,71,0.05), transparent), radial-gradient(ellipse 500px 500px at 70% 40%, rgba(74,143,232,0.03), transparent)",
         }}
       />
 
@@ -26,7 +22,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3 }}
           className="mb-6"
         >
-          <span className="inline-block text-cinema-accent text-xs tracking-[0.4em] px-4 py-1.5 border border-cinema-accent/20 rounded-full">
+          <span className="inline-block text-accent text-xs tracking-[0.4em] px-4 py-1.5 border border-accent/20 rounded-full font-medium">
             PORTFOLIO
           </span>
         </motion.div>
@@ -35,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-gradient-accent mb-6"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-gradient-gold mb-6"
         >
           {profile.name}
         </motion.h1>
@@ -44,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.0 }}
-          className="text-cinema-muted text-sm md:text-base tracking-wide font-light max-w-md mx-auto"
+          className="text-text-dim text-sm md:text-base tracking-wide font-light max-w-md mx-auto"
         >
           {profile.tagline}
         </motion.p>
@@ -57,14 +53,14 @@ export default function Hero() {
         transition={{ delay: 2 }}
         className="absolute bottom-10 flex flex-col items-center gap-2"
       >
-        <span className="text-cinema-muted text-[10px] tracking-[0.3em]">
+        <span className="text-text-muted text-[10px] tracking-[0.3em]">
           SCROLL
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown size={16} className="text-cinema-accent/50" />
+          <ChevronDown size={16} className="text-accent/50" />
         </motion.div>
       </motion.div>
     </section>

@@ -23,14 +23,14 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-cinema-black/80 backdrop-blur-xl border-b border-white/5"
+          ? "bg-bg/80 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-[1100px] mx-auto px-5 md:px-10 py-5 flex items-center justify-between">
         <a
           href="#"
-          className="text-lg font-semibold tracking-[0.2em] text-cinema-white hover:text-cinema-accent transition-colors"
+          className="text-lg font-semibold tracking-[0.2em] text-text hover:text-accent transition-colors"
         >
           DAYLIGHT
         </a>
@@ -41,7 +41,7 @@ export default function Navigation() {
             <a
               key={item.href}
               href={item.href}
-              className="text-xs tracking-[0.15em] text-cinema-muted hover:text-cinema-white transition-colors duration-300"
+              className="text-xs tracking-[0.15em] text-text-dim hover:text-text transition-colors duration-300"
             >
               {item.label}
             </a>
@@ -50,7 +50,7 @@ export default function Navigation() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-cinema-muted"
+          className="md:hidden text-text-dim"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -64,15 +64,15 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-cinema-black/95 backdrop-blur-xl border-b border-white/5"
+            className="md:hidden bg-bg/95 backdrop-blur-xl border-b border-border"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
+            <div className="px-5 py-4 flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm tracking-[0.15em] text-cinema-muted hover:text-cinema-white transition-colors"
+                  className="text-sm tracking-[0.15em] text-text-dim hover:text-text transition-colors"
                 >
                   {item.label}
                 </a>

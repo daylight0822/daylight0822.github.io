@@ -1,22 +1,19 @@
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import Profile from "./components/Profile";
-import Career from "./components/Career";
-import Works from "./components/Works";
-import Journal from "./components/Journal";
-import Footer from "./components/Footer";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CaseStudyPage from "./pages/CaseStudyPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <div className="min-h-screen bg-cinema-black">
-      <Navigation />
-      <Hero />
-      <Profile />
-      <Career />
-      <Works />
-      <Journal />
-      <Footer />
-    </div>
+    <HashRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-bg">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/case-study" element={<CaseStudyPage />} />
+        </Routes>
+      </div>
+    </HashRouter>
   );
 }
 

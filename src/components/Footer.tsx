@@ -5,9 +5,12 @@ export default function Footer() {
         <p className="text-2xl tracking-[0.15em] text-text font-bold mb-3">
           DAYLIGHT
         </p>
-        <p className="text-text-dim text-xs tracking-wider mb-8">
-          Cinematic Storyteller & AI Visual Creator
-        </p>
+        <a
+          href="mailto:daylight0822@naver.com"
+          className="text-text-dim text-xs tracking-wider mb-8 block hover:text-accent transition-colors"
+        >
+          daylight0822@naver.com
+        </a>
         <div className="divider-line mb-8" />
         <p className="text-text-muted/40 text-xs tracking-wider">
           &copy; {new Date().getFullYear()} DAYLIGHT. All rights reserved.

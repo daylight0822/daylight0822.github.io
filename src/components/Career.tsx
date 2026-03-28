@@ -89,12 +89,17 @@ export default function Career() {
                       한국예술종합학교 재학 중 참여한 작품
                     </p>
                   </div>
-                  <motion.div
-                    animate={{ rotate: filmsOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ChevronDown size={20} className="text-accent/50" />
-                  </motion.div>
+                  <span className="flex items-center gap-2 border border-accent/40 rounded-full px-4 py-1.5">
+                    <span className="text-accent text-xs tracking-wider font-medium">
+                      {filmsOpen ? "접기" : "펼쳐보기"}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: filmsOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown size={16} className="text-accent" />
+                    </motion.div>
+                  </span>
                 </div>
               </button>
 

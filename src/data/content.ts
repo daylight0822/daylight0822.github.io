@@ -6,6 +6,36 @@ export const profile = {
   email: "daylight0822@naver.com",
 };
 
+// ===== AI CINEMA =====
+export interface AICinemaItem {
+  id: string;
+  title: string;
+  youtubeUrl: string;
+}
+
+export const aiCinema: AICinemaItem[] = [
+  {
+    id: "ai-1",
+    title: "AI Cinema 01",
+    youtubeUrl: "https://youtu.be/LBI4dSFHVJw",
+  },
+  {
+    id: "ai-2",
+    title: "AI Cinema 02",
+    youtubeUrl: "https://youtu.be/kNdT9aeSjVk",
+  },
+  {
+    id: "ai-3",
+    title: "AI Cinema 03",
+    youtubeUrl: "https://youtu.be/oFEeAXWW_60",
+  },
+  {
+    id: "ai-4",
+    title: "AI Cinema 04",
+    youtubeUrl: "https://youtu.be/pnU5p16Si2Q",
+  },
+];
+
 // ===== CAREERS (Main page) =====
 export interface CareerItem {
   period: string;

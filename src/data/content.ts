@@ -42,6 +42,7 @@ export interface CareerItem {
   title: string;
   company: string;
   description: string;
+  badge?: { src: string; alt: string };
 }
 
 export const careers: CareerItem[] = [
@@ -58,6 +59,7 @@ export const careers: CareerItem[] = [
     company: "베티앤크리에이터스",
     description:
       "드라마 기획안 작성, 대본 구성 및 지원사업 서류 작성 등을 담당. 한국콘텐츠진흥원 기획안 공모사업에 당선되어 3,000만원 개발비를 확보했습니다.",
+    badge: { src: "/gallery/plans/07-선정작.png", alt: "콘텐츠진흥원 기획안 공모사업 선정작 목록" },
   },
   {
     period: "2021.09 — 2021.12",
@@ -142,7 +144,7 @@ export const gallery: GalleryGroup[] = [
   {
     id: "plans",
     title: "기획안 포트폴리오",
-    description: "드라마 기획안 및 콘텐츠진흥원 공모사업 관련 자료",
+    description: "드라마 기획 단계에서 작성한 기획안 자료들",
     images: [
       { src: "/gallery/plans/01-승강장.png", alt: "2-3 승강장 기획안" },
       { src: "/gallery/plans/02-경성부녀자.png", alt: "경성부녀자 고민상담소 기획안" },
@@ -150,13 +152,12 @@ export const gallery: GalleryGroup[] = [
       { src: "/gallery/plans/04-antilove.png", alt: "ANTI LOVE LATION 기획안" },
       { src: "/gallery/plans/05-젠틀맨.png", alt: "젠틀맨을 위하여 기획안" },
       { src: "/gallery/plans/06-풀카운트.png", alt: "풀카운트 기획안" },
-      { src: "/gallery/plans/07-선정작.png", alt: "콘텐츠진흥원 선정작 목록" },
     ],
   },
   {
     id: "txt",
-    title: "TXT 시즌그리팅 실무과제",
-    description: "TOMORROW X TOGETHER SPIN OFF : RHAPSODY 2025 시즌그리팅 기획",
+    title: "TXT 시즌그리팅 컨셉 기획",
+    description: "개인 작업 — TOMORROW X TOGETHER SPIN OFF : RHAPSODY를 주제로 한 시즌그리팅 컨셉 기획",
     images: [
       { src: "/gallery/txt/01-cover.png", alt: "TXT SPIN OFF: RHAPSODY 커버" },
       { src: "/gallery/txt/02-keypoint.png", alt: "Key Point — 컨셉 확장과 변주" },

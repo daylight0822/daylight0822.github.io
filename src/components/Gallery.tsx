@@ -56,20 +56,20 @@ export default function Gallery() {
                   <p className="text-white/60 text-sm">{group.description}</p>
                 </div>
 
-                <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                   {group.images.map((img, ii) => (
                     <motion.div
                       key={ii}
-                      whileHover={{ scale: 1.03 }}
+                      whileHover={{ scale: 1.02 }}
                       onClick={() =>
                         setViewer({ groupIdx: gi, imgIdx: ii })
                       }
-                      className="cursor-pointer rounded-lg overflow-hidden border border-border hover:border-accent/40 transition-colors duration-300 bg-bg-elevated"
+                      className="cursor-pointer rounded-lg overflow-hidden border border-border hover:border-accent/40 transition-colors duration-300 bg-bg-elevated p-2"
                     >
                       <img
                         src={img.src}
                         alt={img.alt}
-                        className="w-full h-full object-cover aspect-[16/9]"
+                        className="w-full rounded object-contain"
                         loading="lazy"
                       />
                     </motion.div>

@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-gradient-gold mb-6"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-accent mb-6"
         >
           {profile.name}
         </motion.h1>

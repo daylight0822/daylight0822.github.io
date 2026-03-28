@@ -68,9 +68,9 @@
   --color-accent: #e8c547;
   --color-accent-dim: #c9a830;
   --color-accent-glow: rgba(232, 197, 71, 0.12);
-  --color-text: #e8e6e1;
-  --color-text-dim: #8a8880;
-  --color-text-muted: #5a5850;
+  --color-text: #ffffff;
+  --color-text-dim: #c8c6c1;
+  --color-text-muted: #8a8880;
   --color-border: #2a2a30;
   --color-red: #e05545;
   --color-green: #45c06a;

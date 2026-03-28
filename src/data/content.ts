@@ -101,6 +101,11 @@ export const filmography: FilmographyItem[] = [
 ];
 
 // ===== WORKS (Main page) =====
+export interface WorkDetail {
+  heading: string;
+  items: string[];
+}
+
 export interface WorkItem {
   id: string;
   title: string;
@@ -108,78 +113,122 @@ export interface WorkItem {
   description: string;
   thumbnail: string;
   tools: string[];
-  caseStudyPath?: string;
+  youtubeUrl?: string;
+  details?: WorkDetail[];
 }
 
 export const works: WorkItem[] = [
-  // — 드라마 —
   {
-    id: "work-1",
+    id: "insssa-time",
     title: "0교시는 인싸타임",
     category: "드라마",
-    description: "전체 1~8부 대본 기획부터 제작, 마케팅, 유통까지 프로젝트 전 과정에 참여. 포스터 디렉션, 티저·예고편 직접 제작, 해외 플랫폼 납품까지 담당했습니다.",
+    description: "전체 1~8부 대본 기획부터 제작, 마케팅, 유통까지 프로젝트 전 과정에 참여.",
     thumbnail: "",
     tools: ["기획·제작", "마케팅", "유통"],
+    youtubeUrl: "https://youtu.be/niCpPQ6vMi0?si=Ads19Xp_2lNIONNU",
+    details: [
+      {
+        heading: "대본 기획",
+        items: ["전체 1~8부 대본 기획 및 피드백"],
+      },
+      {
+        heading: "제작/포스트",
+        items: [
+          "로케이션 헌팅 참여, 프로덕션 현장 백업, 합본 영상 편집, CG 체크",
+        ],
+      },
+      {
+        heading: "마케팅",
+        items: [
+          "포스터 촬영 현장 진행 및 디렉션, 포스터 디자인 컴 및 수정, 스틸메이킹 커뮤니케이션 및 영상 관리",
+          "티저/예고/하이라이트 등 홍보 소재 직접 제작, 외주 홍보사와 커뮤니케이션",
+        ],
+      },
+      {
+        heading: "유통",
+        items: [
+          "본편 영상 및 홍보 소재 유통사와 해외 플랫폼에 납품",
+          "심의 등록 및 영상자료원 제출 진행 백업",
+        ],
+      },
+    ],
   },
   {
-    id: "work-2",
+    id: "suspicious-her",
     title: "수상한 그녀",
     category: "드라마",
-    description: "9~12부 대본 기획 및 피드백 참여. LA WEBFEST 출품 자료 준비, 해외 세일즈용 영자막 제작 관리 및 홍보 기사 검수를 담당했습니다.",
+    description: "9~12부 대본 기획 및 피드백 참여. LA WEBFEST 출품 자료 준비, 해외 세일즈 관리.",
     thumbnail: "",
     tools: ["대본 기획", "해외 세일즈", "마케팅"],
+    youtubeUrl: "https://youtu.be/O1RHSDucca0?si=vbvra5MV4iH1LL5a",
+    details: [
+      {
+        heading: "대본 기획",
+        items: ["입사 후 9~12부 대본 기획 및 피드백, 대본 수정 참여"],
+      },
+      {
+        heading: "유통/마케팅",
+        items: [
+          "LA WEBFEST 영상 및 스틸 자료 준비, 해외 세일즈용 영자막 제작 외주사 관리 및 커뮤니케이션, 홍보 기사 검수",
+        ],
+      },
+    ],
   },
   {
-    id: "work-3",
+    id: "branding-seongsu",
     title: "브랜딩 인 성수동",
     category: "드라마",
-    description: "1~24부 편집 피드백 참여 및 홍보 소재 피드백을 담당했습니다.",
+    description: "편집 피드백 참여 및 기사 검수를 담당했습니다.",
     thumbnail: "",
-    tools: ["편집 기획", "마케팅"],
+    tools: ["편집 피드백", "기사 검수"],
+    youtubeUrl: "https://youtu.be/Z-dUv2caA4o?si=TcbE5Hy_LAxmKj41",
+    details: [
+      {
+        heading: "담당 업무",
+        items: ["편집 피드백 참여, 기사 검수"],
+      },
+    ],
   },
-  // — 기획안 —
   {
-    id: "work-4",
-    title: "경성부녀자 고민상담소",
-    category: "기획안",
-    description: "소설 원작을 드라마로 개발. 전체 줄거리와 회별 줄거리를 직접 구성하여 한국콘텐츠진흥원 기획안 공모사업에 당선, 3,000만원 개발비를 확보했습니다.",
-    thumbnail: "",
-    tools: ["스토리 구성", "사업서류", "공모 당선"],
-  },
-  // — 편집 —
-  {
-    id: "work-5",
+    id: "hidden-guy",
     title: "숨은 그놈 찾기",
     category: "편집",
     description: "웹드라마 전체 8부 본편 편집, 예고편 편집 및 종편 관리를 담당했습니다.",
     thumbnail: "",
     tools: ["Premiere Pro", "편집감독"],
+    youtubeUrl: "https://youtu.be/kmgt51TxE_g?si=ilJ9MxxEhhTnmilx",
+    details: [
+      {
+        heading: "담당 업무",
+        items: [
+          "EP.01~08부 편집",
+          "예고편 편집",
+          "종편 관리",
+        ],
+      },
+    ],
   },
   {
-    id: "work-6",
+    id: "real-time-love",
     title: "리얼:타임:러브 시즌3",
     category: "편집",
     description: "와이낫미디어 기획 웹드라마. 본편 가편집 및 1차 편집을 담당했습니다.",
     thumbnail: "",
     tools: ["Premiere Pro", "가편집"],
-  },
-  // — 기타 —
-  {
-    id: "work-7",
-    title: "MBN <헬로트로트> 제작마케팅",
-    category: "기타",
-    description: "MBN 예능 프로그램 <헬로트로트>의 제작마케팅에 참여했습니다.",
-    thumbnail: "",
-    tools: ["제작마케팅"],
-  },
-  {
-    id: "work-8",
-    title: "AI 생성형 영상 실험",
-    category: "기타",
-    description: "Runway, Sora, Midjourney 등 생성형 AI 툴을 활용한 시네마틱 영상 제작 실험 및 포트폴리오 제작.",
-    thumbnail: "",
-    tools: ["Runway", "Sora", "Midjourney"],
-    caseStudyPath: "/case-study",
+    youtubeUrl: "https://youtu.be/-f-dEG4_g80?si=I37ArBcs5kB0zFE7",
+    details: [
+      {
+        heading: "작품 정보",
+        items: [
+          "방송 일자: 2020년 08월 21일 ~ 10월 9일",
+          "기획: 와이낫미디어",
+        ],
+      },
+      {
+        heading: "담당 업무",
+        items: ["본편 가편집 및 1차 편집"],
+      },
+    ],
   },
 ];
 

@@ -25,30 +25,24 @@ export default function Profile() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid md:grid-cols-[1fr_2fr] gap-12 items-start"
         >
-          {/* Profile image placeholder */}
-          <div className="aspect-[3/4] rounded-2xl bg-bg-elevated border border-border flex items-center justify-center hover:border-accent-dim transition-colors duration-300">
-            <span className="text-text-muted text-sm tracking-wider">
-              PHOTO
-            </span>
-          </div>
-
-          <div className="space-y-6">
+          <div className="space-y-6 max-w-2xl">
             <h3 className="text-2xl text-text font-medium">
               {profile.nameKo}
             </h3>
             <p className="text-text-dim leading-relaxed text-base">
-              {profile.bio}
+              한국예술종합학교 영상원 영화과 졸업 후 프리랜서 편집자를 거쳐 드라마 기획PD로 일했습니다.
+              <br />
+              <span className="text-text font-semibold">크리에이터의 감각으로 풀어내고 프로듀서의 시선으로 사람을 연결하는 프로듀서입니다.</span>
             </p>
 
             <div className="divider-line my-8" />
 
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: "FOCUS", value: "AI 콘텐츠 프로듀싱" },
-                { label: "TOOLS", value: "Runway, Sora, Midjourney, Premiere Pro" },
-                { label: "BACKGROUND", value: "한국예술종합학교 영화 전공 · 드라마 기획PD 3년" },
+                { label: "MAJOR", value: "영화 (편집전공)" },
+                { label: "TOOLS", value: "Premiere Pro, After Effects, Figma, Photoshop, Higgsfield, Claude Code" },
+                { label: "BACKGROUND", value: "드라마 기획PD 4년" },
                 { label: "CONTACT", value: profile.email },
               ].map((item) => (
                 <div key={item.label}>

@@ -16,13 +16,6 @@ export interface CareerItem {
 
 export const careers: CareerItem[] = [
   {
-    period: "2025 — 현재",
-    title: "AI 영상 프로듀서 & 스터디 운영",
-    company: "No Camera Cinema Lab",
-    description:
-      "AI 영상 스터디 'No Camera Cinema Lab'을 운영하며, Runway·Sora 등 생성형 AI 툴로 카메라 없이 영상의 무빙과 구도를 구현하는 방법을 연구하고 있습니다.",
-  },
-  {
     period: "2023.11 — 2025.02",
     title: "기획 PD",
     company: "스튜디오브이플러스",
@@ -52,6 +45,61 @@ export const careers: CareerItem[] = [
   },
 ];
 
+// ===== FILMOGRAPHY (Short Films) =====
+export interface FilmographyItem {
+  year: string;
+  title: string;
+  director: string;
+  role: string;
+  note?: string;
+}
+
+export const filmography: FilmographyItem[] = [
+  {
+    year: "2019",
+    title: "에이스",
+    director: "김이지 감독",
+    role: "편집",
+    note: "제25회 부천국제판타스틱영화제 단편걸작선 초청",
+  },
+  {
+    year: "2018",
+    title: "The Show Must Go On",
+    director: "김예린 감독",
+    role: "편집",
+  },
+  {
+    year: "2016",
+    title: "영서",
+    director: "구소정 감독",
+    role: "스크립터 · CG",
+  },
+  {
+    year: "2016",
+    title: "알포인트",
+    director: "김근솔 감독",
+    role: "제작부",
+  },
+  {
+    year: "2015",
+    title: "Road to Road",
+    director: "김아성 감독",
+    role: "편집감독",
+  },
+  {
+    year: "2015",
+    title: "거울 뒤 건너에는다",
+    director: "김까지 감독",
+    role: "연출부",
+  },
+  {
+    year: "2015",
+    title: "밥 먹을 때 연락해요",
+    director: "하혜미 감독",
+    role: "연출부",
+  },
+];
+
 // ===== WORKS (Main page) =====
 export interface WorkItem {
   id: string;
@@ -64,37 +112,73 @@ export interface WorkItem {
 }
 
 export const works: WorkItem[] = [
+  // — 드라마 —
   {
     id: "work-1",
     title: "0교시는 인싸타임",
-    category: "드라마 기획·제작",
+    category: "드라마",
     description: "전체 1~8부 대본 기획부터 제작, 마케팅, 유통까지 프로젝트 전 과정에 참여. 포스터 디렉션, 티저·예고편 직접 제작, 해외 플랫폼 납품까지 담당했습니다.",
     thumbnail: "",
-    tools: ["Premiere Pro", "기획", "마케팅", "유통"],
+    tools: ["기획·제작", "마케팅", "유통"],
   },
   {
     id: "work-2",
-    title: "경성부녀자 고민상담소",
-    category: "기획안 공모 당선",
-    description: "소설 원작을 드라마로 개발. 전체 줄거리와 회별 줄거리를 직접 구성하여 한국콘텐츠진흥원 기획안 공모사업에 당선, 3,000만원 개발비를 확보했습니다.",
+    title: "수상한 그녀",
+    category: "드라마",
+    description: "9~12부 대본 기획 및 피드백 참여. LA WEBFEST 출품 자료 준비, 해외 세일즈용 영자막 제작 관리 및 홍보 기사 검수를 담당했습니다.",
     thumbnail: "",
-    tools: ["기획", "스토리 구성", "사업서류"],
+    tools: ["대본 기획", "해외 세일즈", "마케팅"],
   },
   {
     id: "work-3",
-    title: "수상한 그녀",
-    category: "드라마 기획",
-    description: "9~12부 대본 기획 및 피드백 참여. LA WEBFEST 출품 자료 준비, 해외 세일즈용 영자막 제작 관리 및 홍보 기사 검수를 담당했습니다.",
+    title: "브랜딩 인 성수동",
+    category: "드라마",
+    description: "1~24부 편집 피드백 참여 및 홍보 소재 피드백을 담당했습니다.",
     thumbnail: "",
-    tools: ["기획", "해외 세일즈", "LA WEBFEST"],
+    tools: ["편집 기획", "마케팅"],
   },
+  // — 기획안 —
   {
     id: "work-4",
-    title: "AI Short Film Production Pipeline",
-    category: "AI 시네마틱",
-    description: "텍스트 시나리오에서 출발해 AI 생성 도구와 전통 편집을 결합하여 완성한 초단편 영화. 전체 제작 과정을 기록한 케이스 스터디.",
+    title: "경성부녀자 고민상담소",
+    category: "기획안",
+    description: "소설 원작을 드라마로 개발. 전체 줄거리와 회별 줄거리를 직접 구성하여 한국콘텐츠진흥원 기획안 공모사업에 당선, 3,000만원 개발비를 확보했습니다.",
     thumbnail: "",
-    tools: ["Runway", "Sora", "Midjourney", "Premiere Pro"],
+    tools: ["스토리 구성", "사업서류", "공모 당선"],
+  },
+  // — 편집 —
+  {
+    id: "work-5",
+    title: "숨은 그놈 찾기",
+    category: "편집",
+    description: "웹드라마 전체 8부 본편 편집, 예고편 편집 및 종편 관리를 담당했습니다.",
+    thumbnail: "",
+    tools: ["Premiere Pro", "편집감독"],
+  },
+  {
+    id: "work-6",
+    title: "리얼:타임:러브 시즌3",
+    category: "편집",
+    description: "와이낫미디어 기획 웹드라마. 본편 가편집 및 1차 편집을 담당했습니다.",
+    thumbnail: "",
+    tools: ["Premiere Pro", "가편집"],
+  },
+  // — 기타 —
+  {
+    id: "work-7",
+    title: "MBN <헬로트로트> 제작마케팅",
+    category: "기타",
+    description: "MBN 예능 프로그램 <헬로트로트>의 제작마케팅에 참여했습니다.",
+    thumbnail: "",
+    tools: ["제작마케팅"],
+  },
+  {
+    id: "work-8",
+    title: "AI 생성형 영상 실험",
+    category: "기타",
+    description: "Runway, Sora, Midjourney 등 생성형 AI 툴을 활용한 시네마틱 영상 제작 실험 및 포트폴리오 제작.",
+    thumbnail: "",
+    tools: ["Runway", "Sora", "Midjourney"],
     caseStudyPath: "/case-study",
   },
 ];

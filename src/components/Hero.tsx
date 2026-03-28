@@ -36,14 +36,21 @@ export default function Hero() {
           {profile.name}
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.0 }}
-          className="text-text-dim text-sm md:text-base tracking-wide font-light max-w-md mx-auto"
+          className="flex items-center justify-center gap-3 md:gap-4"
         >
-          {profile.tagline}
-        </motion.p>
+          {["Think", "Write", "Create"].map((word, i) => (
+            <span key={word} className="flex items-center gap-3 md:gap-4">
+              {i > 0 && <span className="text-accent/30 text-xs">·</span>}
+              <span className="text-text-dim text-sm md:text-base tracking-[0.2em] font-light">
+                {word}
+              </span>
+            </span>
+          ))}
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}

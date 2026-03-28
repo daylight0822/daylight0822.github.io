@@ -5,9 +5,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
   { label: "PROFILE", target: "profile" },
-  { label: "AI CINEMA", target: "ai-cinema" },
+  { label: "AI WORKS", target: "ai-works" },
   { label: "CAREER", target: "career" },
-  { label: "FILMOGRAPHY", target: "filmography" },
+  { label: "FILMS", target: "films" },
   { label: "WORKS", target: "works" },
   { label: "JOURNAL", target: "journal" },
 ];

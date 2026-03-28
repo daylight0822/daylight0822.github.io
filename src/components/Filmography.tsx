@@ -3,7 +3,7 @@ import { filmography } from "../data/content";
 
 export default function Filmography() {
   return (
-    <section id="filmography" className="py-32 px-5 md:px-10">
+    <section id="films" className="py-32 px-5 md:px-10">
       <div className="max-w-[1100px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -16,7 +16,7 @@ export default function Filmography() {
             SHORT FILMS
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text">
-            Filmography
+            Films
           </h2>
         </motion.div>
 

@@ -19,7 +19,7 @@ export default function AICinema() {
 
   return (
     <>
-      <section id="ai-cinema" className="py-32 px-5 md:px-10">
+      <section id="ai-works" className="py-32 px-5 md:px-10">
         <div className="max-w-[1100px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -32,7 +32,7 @@ export default function AICinema() {
               AI VIDEO PRODUCTION
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text">
-              AI Cinema
+              AI Works
             </h2>
           </motion.div>
 

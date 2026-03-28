@@ -46,9 +46,9 @@ export default function Profile() {
 
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: "FOCUS", value: "AI 시네마틱 영상 제작" },
-                { label: "TOOLS", value: "Kling AI, Runway, Midjourney" },
-                { label: "BACKGROUND", value: "드라마 기획/제작, 영상 편집" },
+                { label: "FOCUS", value: "AI 콘텐츠 프로듀싱" },
+                { label: "TOOLS", value: "Runway, Sora, Midjourney, Premiere Pro" },
+                { label: "BACKGROUND", value: "한국예술종합학교 영화 전공 · 드라마 기획PD 3년" },
                 { label: "CONTACT", value: profile.email },
               ].map((item) => (
                 <div key={item.label}>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { gallery } from "../data/content";
 
 export default function Gallery() {
@@ -78,6 +79,26 @@ export default function Gallery() {
               </motion.div>
             ))}
           </div>
+
+          {/* Case Study CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="mt-24 text-center"
+          >
+            <div className="divider-line mb-12" />
+            <p className="text-text-muted text-sm tracking-wider mb-6">
+              AI 영상 제작에 대한 생각과 기록
+            </p>
+            <Link
+              to="/case-study"
+              className="inline-flex items-center gap-3 text-accent text-sm tracking-[0.2em] font-medium border border-accent/30 hover:border-accent hover:bg-accent/5 px-8 py-3.5 rounded-full transition-all duration-300 no-underline"
+            >
+              CASE STUDY →
+            </Link>
+          </motion.div>
         </div>
       </section>
 

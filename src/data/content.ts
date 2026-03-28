@@ -300,8 +300,8 @@ export const works: WorkItem[] = [
   },
 ];
 
-// ===== JOURNAL (Main page) =====
-export interface JournalEntry {
+// ===== CASE STUDY POSTS =====
+export interface CaseStudyPost {
   id: string;
   date: string;
   title: string;
@@ -309,9 +309,11 @@ export interface JournalEntry {
   content: string;
 }
 
-export const journal: JournalEntry[] = [
+export const caseStudyPosts: CaseStudyPost[] = [
+  // 새 글을 추가하려면 여기에 같은 형식으로 넣으면 됩니다.
+  // GitHub 웹에서 이 파일을 편집하고 저장하면 자동 배포됩니다.
   {
-    id: "journal-1",
+    id: "no-camera-cinema-lab",
     date: "2025.03",
     title: "No Camera Cinema Lab — 카메라 없이 영상을 만든다는 것",
     excerpt:
@@ -320,7 +322,7 @@ export const journal: JournalEntry[] = [
       "여기에 전체 글 내용이 들어갑니다.",
   },
   {
-    id: "journal-2",
+    id: "from-pd-to-ai-producer",
     date: "2025.02",
     title: "기획 PD에서 AI 프로듀서로 — 콘텐츠 제작의 변화",
     excerpt:

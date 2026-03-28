@@ -9,6 +9,7 @@ const navItems = [
   { label: "CAREER", target: "career" },
   { label: "FILMS", target: "films" },
   { label: "WORKS", target: "works" },
+  { label: "GALLERY", target: "gallery" },
   { label: "JOURNAL", target: "journal" },
 ];
 

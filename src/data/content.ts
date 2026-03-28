@@ -130,6 +130,43 @@ export const filmography: FilmographyItem[] = [
   },
 ];
 
+// ===== GALLERY (Etc) =====
+export interface GalleryGroup {
+  id: string;
+  title: string;
+  description: string;
+  images: { src: string; alt: string }[];
+}
+
+export const gallery: GalleryGroup[] = [
+  {
+    id: "plans",
+    title: "기획안 포트폴리오",
+    description: "드라마 기획안 및 콘텐츠진흥원 공모사업 관련 자료",
+    images: [
+      { src: "/gallery/plans/01-승강장.png", alt: "2-3 승강장 기획안" },
+      { src: "/gallery/plans/02-경성부녀자.png", alt: "경성부녀자 고민상담소 기획안" },
+      { src: "/gallery/plans/03-고구려.png", alt: "고구려 개마무사 기획안" },
+      { src: "/gallery/plans/04-antilove.png", alt: "ANTI LOVE LATION 기획안" },
+      { src: "/gallery/plans/05-젠틀맨.png", alt: "젠틀맨을 위하여 기획안" },
+      { src: "/gallery/plans/06-풀카운트.png", alt: "풀카운트 기획안" },
+      { src: "/gallery/plans/07-선정작.png", alt: "콘텐츠진흥원 선정작 목록" },
+    ],
+  },
+  {
+    id: "txt",
+    title: "TXT 시즌그리팅 실무과제",
+    description: "TOMORROW X TOGETHER SPIN OFF : RHAPSODY 2025 시즌그리팅 기획",
+    images: [
+      { src: "/gallery/txt/01-cover.png", alt: "TXT SPIN OFF: RHAPSODY 커버" },
+      { src: "/gallery/txt/02-keypoint.png", alt: "Key Point — 컨셉 확장과 변주" },
+      { src: "/gallery/txt/03-story.png", alt: "Story Concept — 나니아 연대기" },
+      { src: "/gallery/txt/04-image.png", alt: "Image Concept — 한복과 자개" },
+      { src: "/gallery/txt/05-md.png", alt: "MD Concept" },
+    ],
+  },
+];
+
 // ===== WORKS (Main page) =====
 export interface WorkDetail {
   heading: string;

@@ -20,9 +20,14 @@ export const aiCinema: AICinemaItem[] = [
     youtubeUrl: "https://youtu.be/cNRMXlZoaUQ",
   },
   {
-    id: "ai-2",
-    title: "AI 습작 예고편",
-    youtubeUrl: "https://youtu.be/LBI4dSFHVJw",
+    id: "ai-5",
+    title: "인물 팔로우",
+    youtubeUrl: "https://youtu.be/pnU5p16Si2Q",
+  },
+  {
+    id: "ai-7",
+    title: "시선의 이동",
+    youtubeUrl: "https://youtu.be/aOjCWI8oVsU",
   },
   {
     id: "ai-3",
@@ -30,24 +35,14 @@ export const aiCinema: AICinemaItem[] = [
     youtubeUrl: "https://youtu.be/kNdT9aeSjVk",
   },
   {
-    id: "ai-4",
-    title: "피코",
-    youtubeUrl: "https://youtu.be/oFEeAXWW_60",
-  },
-  {
-    id: "ai-5",
-    title: "인물 팔로우",
-    youtubeUrl: "https://youtu.be/pnU5p16Si2Q",
-  },
-  {
     id: "ai-6",
     title: "3인대화",
     youtubeUrl: "https://youtu.be/yAjNAbMRVxs",
   },
   {
-    id: "ai-7",
-    title: "시선의 이동",
-    youtubeUrl: "https://youtu.be/aOjCWI8oVsU",
+    id: "ai-2",
+    title: "AI 습작 예고편",
+    youtubeUrl: "https://youtu.be/LBI4dSFHVJw",
   },
 ];
 

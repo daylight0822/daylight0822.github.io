@@ -16,7 +16,7 @@ export interface AICinemaItem {
 export const aiCinema: AICinemaItem[] = [
   {
     id: "ai-1",
-    title: "인물 팔로우",
+    title: "가장 오래된 것",
     youtubeUrl: "https://youtu.be/cNRMXlZoaUQ",
   },
   {
@@ -38,6 +38,11 @@ export const aiCinema: AICinemaItem[] = [
     id: "ai-3",
     title: "3인 대화",
     youtubeUrl: "https://youtu.be/kNdT9aeSjVk",
+  },
+  {
+    id: "ai-4",
+    title: "인물 팔로우",
+    youtubeUrl: "https://youtu.be/oFEeAXWW_60",
   },
   {
     id: "ai-2",

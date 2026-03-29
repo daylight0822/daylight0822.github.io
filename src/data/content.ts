@@ -16,23 +16,38 @@ export interface AICinemaItem {
 export const aiCinema: AICinemaItem[] = [
   {
     id: "ai-1",
-    title: "AI Cinema 01",
-    youtubeUrl: "https://youtu.be/LBI4dSFHVJw",
+    title: "가장 오래된 것",
+    youtubeUrl: "https://youtu.be/cNRMXlZoaUQ",
   },
   {
     id: "ai-2",
-    title: "AI Cinema 02",
-    youtubeUrl: "https://youtu.be/kNdT9aeSjVk",
+    title: "AI 습작 예고편",
+    youtubeUrl: "https://youtu.be/LBI4dSFHVJw",
   },
   {
     id: "ai-3",
-    title: "AI Cinema 03",
-    youtubeUrl: "https://youtu.be/oFEeAXWW_60",
+    title: "증언",
+    youtubeUrl: "https://youtu.be/kNdT9aeSjVk",
   },
   {
     id: "ai-4",
-    title: "AI Cinema 04",
+    title: "피코",
+    youtubeUrl: "https://youtu.be/oFEeAXWW_60",
+  },
+  {
+    id: "ai-5",
+    title: "인물 팔로우",
     youtubeUrl: "https://youtu.be/pnU5p16Si2Q",
+  },
+  {
+    id: "ai-6",
+    title: "3인대화",
+    youtubeUrl: "https://youtu.be/yAjNAbMRVxs",
+  },
+  {
+    id: "ai-7",
+    title: "시선의 이동",
+    youtubeUrl: "https://youtu.be/aOjCWI8oVsU",
   },
 ];
 

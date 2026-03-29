@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Play } from "lucide-react";
+import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { aiCinema } from "../data/content";
 
 function getYoutubeId(url: string): string | null {
@@ -15,12 +15,28 @@ function getYoutubeId(url: string): string | null {
 }
 
 export default function AICinema() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
   const [activeId, setActiveId] = useState<string | null>(null);
+
+  const go = (idx: number) => {
+    setDirection(idx > current ? 1 : -1);
+    setCurrent(idx);
+  };
+  const prev = () => go((current - 1 + aiCinema.length) % aiCinema.length);
+  const next = () => go((current + 1) % aiCinema.length);
+
+  const item = aiCinema[current];
+  const videoId = getYoutubeId(item.youtubeUrl);
+  const thumb = videoId
+    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+    : "";
 
   return (
     <>
       <section id="ai-works" className="py-32 px-5 md:px-10">
         <div className="max-w-[1100px] mx-auto">
+          {/* 헤더 */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,46 +52,97 @@ export default function AICinema() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-6">
-            {aiCinema.map((item, i) => {
-              const videoId = getYoutubeId(item.youtubeUrl);
-              const thumb = videoId
-                ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-                : "";
-
-              return (
+          {/* 메인 카루셀 */}
+          <div className="relative group/carousel">
+            <div className="relative overflow-hidden rounded-2xl border border-border">
+              <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  key={current}
+                  custom={direction}
+                  initial={{ opacity: 0, x: direction * 80 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: direction * -80 }}
+                  transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="relative aspect-video cursor-pointer group"
                   onClick={() => setActiveId(item.id)}
-                  className="group cursor-pointer relative rounded-xl overflow-hidden border border-border hover:border-accent/40 transition-colors duration-300"
                 >
-                  <div className="aspect-video bg-bg-elevated overflow-hidden">
-                    {thumb && (
-                      <img
-                        src={thumb}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                    )}
-                  </div>
-                  {/* Play overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-bg/30 group-hover:bg-bg/50 transition-colors duration-300">
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-accent/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Play size={20} className="text-bg ml-0.5" fill="currentColor" />
+                  {thumb && (
+                    <img
+                      src={thumb}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {/* 오버레이 */}
+                  <div className="absolute inset-0 bg-bg/10 group-hover:bg-bg/30 transition-colors duration-300" />
+                  {/* 플레이 버튼 */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-accent/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                      <Play size={24} className="text-bg ml-1" fill="currentColor" />
                     </div>
                   </div>
+                  {/* 제목 오버레이 */}
+                  <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-bg/80 to-transparent">
+                    <p className="text-text font-semibold text-lg">{item.title}</p>
+                  </div>
                 </motion.div>
-              );
-            })}
+              </AnimatePresence>
+            </div>
+
+            {/* 화살표 — 호버 시 표시 */}
+            <button
+              onClick={prev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-bg-elevated/80 backdrop-blur-sm border border-border flex items-center justify-center hover:border-accent/50 transition-all duration-200 z-10 opacity-0 group-hover/carousel:opacity-100"
+            >
+              <ChevronLeft size={18} className="text-text" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-bg-elevated/80 backdrop-blur-sm border border-border flex items-center justify-center hover:border-accent/50 transition-all duration-200 z-10 opacity-0 group-hover/carousel:opacity-100"
+            >
+              <ChevronRight size={18} className="text-text" />
+            </button>
+          </div>
+
+          {/* 썸네일 스트립 + 카운터 */}
+          <div className="flex items-center justify-between mt-4">
+            <div className="flex gap-2 flex-wrap">
+              {aiCinema.map((v, i) => {
+                const vid = getYoutubeId(v.youtubeUrl);
+                const t = vid
+                  ? `https://img.youtube.com/vi/${vid}/mqdefault.jpg`
+                  : "";
+                return (
+                  <button
+                    key={v.id}
+                    onClick={() => go(i)}
+                    className={`relative w-16 md:w-20 aspect-video rounded-lg overflow-hidden border transition-all duration-200 ${
+                      i === current
+                        ? "border-accent scale-105"
+                        : "border-border opacity-40 hover:opacity-70"
+                    }`}
+                  >
+                    {t && (
+                      <img
+                        src={t}
+                        alt={v.title}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="text-text-dim text-sm tabular-nums shrink-0 ml-4">
+              <span className="text-text font-medium">{current + 1}</span>
+              <span className="mx-1">/</span>
+              {aiCinema.length}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Video Modal */}
+      {/* 비디오 모달 */}
       <AnimatePresence>
         {activeId && (
           <motion.div
@@ -86,10 +153,7 @@ export default function AICinema() {
             className="fixed inset-0 z-[100] flex items-center justify-center px-4"
             onClick={() => setActiveId(null)}
           >
-            {/* Backdrop */}
             <div className="absolute inset-0 bg-bg/90 backdrop-blur-sm" />
-
-            {/* Content */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -98,24 +162,22 @@ export default function AICinema() {
               className="relative w-full max-w-[800px]"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close button */}
               <button
                 onClick={() => setActiveId(null)}
                 className="absolute -top-10 right-0 text-text-dim hover:text-text transition-colors"
               >
                 <X size={24} />
               </button>
-
               <div className="aspect-video rounded-xl overflow-hidden border border-border bg-bg-elevated">
                 {(() => {
-                  const item = aiCinema.find((v) => v.id === activeId);
-                  if (!item) return null;
-                  const videoId = getYoutubeId(item.youtubeUrl);
-                  if (!videoId) return null;
+                  const a = aiCinema.find((v) => v.id === activeId);
+                  if (!a) return null;
+                  const vid = getYoutubeId(a.youtubeUrl);
+                  if (!vid) return null;
                   return (
                     <iframe
-                      src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                      title={item.title}
+                      src={`https://www.youtube.com/embed/${vid}?autoplay=1`}
+                      title={a.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       className="w-full h-full"

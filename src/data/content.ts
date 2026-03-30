@@ -66,7 +66,7 @@ export const careers: CareerItem[] = [
     title: "기획 PD",
     company: "스튜디오브이플러스",
     description:
-      "드라마 <수상한 그녀> 대본 기획 및 해외 세일즈, <0교시는 인싸타임> 전체 대본 기획·제작·마케팅·유통까지 프로젝트 전 과정을 담당했습니다.",
+      "드라마 <수상한 그녀> 대본 기획 참여, 해외 세일즈 소재 관리, <0교시는 인싸타임> 전체 대본 기획~프로젝트 전 과정에 참여했습니다.",
   },
   {
     period: "2022.03 — 2023.10",
@@ -104,7 +104,7 @@ export interface FilmographyItem {
 export const filmography: FilmographyItem[] = [
   {
     year: "2019",
-    title: "에이스",
+    title: "캐시",
     director: "길이지 감독",
     role: "편집",
     note: "제25회 부천국제판타스틱영화제 단편걸작선 초청",
@@ -124,7 +124,7 @@ export const filmography: FilmographyItem[] = [
   {
     year: "2016",
     title: "알로하 하와이",
-    director: "김다솔 감독",
+    director: "김다솜 감독",
     role: "제작부",
   },
   {
@@ -158,7 +158,7 @@ export interface GalleryGroup {
 export const gallery: GalleryGroup[] = [
   {
     id: "plans",
-    title: "기획안 포트폴리오",
+    title: "기획안 포트폴리오 > PPT",
     description: "드라마 기획 단계에서 작성한 기획안 자료들",
     images: [
       { src: "/gallery/plans/01-승강장.png", alt: "2-3 승강장 기획안" },
@@ -167,13 +167,6 @@ export const gallery: GalleryGroup[] = [
       { src: "/gallery/plans/04-antilove.png", alt: "ANTI LOVE LATION 기획안" },
       { src: "/gallery/plans/05-젠틀맨.png", alt: "젠틀맨을 위하여 기획안" },
       { src: "/gallery/plans/06-풀카운트.png", alt: "풀카운트 기획안" },
-    ],
-  },
-  {
-    id: "txt",
-    title: "개인 취미 작업",
-    description: "아이돌 시즌그리팅 컨셉 기획",
-    images: [
       { src: "/gallery/txt/01-cover.png", alt: "TXT SPIN OFF: RHAPSODY 커버" },
       { src: "/gallery/txt/02-keypoint.png", alt: "Key Point — 컨셉 확장과 변주" },
       { src: "/gallery/txt/03-story.png", alt: "Story Concept — 나니아 연대기" },
@@ -261,7 +254,7 @@ export const works: WorkItem[] = [
     id: "branding-seongsu",
     title: "브랜딩 인 성수동",
     category: "드라마",
-    description: "편집 피드백 참여 및 기사 검수를 담당했습니다.",
+    description: "편집 피드백 참여 및 기사 검수를 담당.",
     thumbnail: "",
     tools: ["편집 피드백", "기사 검수"],
     youtubeUrl: "https://youtu.be/Z-dUv2caA4o?si=TcbE5Hy_LAxmKj41",
@@ -276,7 +269,7 @@ export const works: WorkItem[] = [
     id: "hidden-guy",
     title: "숨은 그놈 찾기",
     category: "편집",
-    description: "웹드라마 전체 8부 본편 편집, 예고편 편집 및 종편 관리를 담당했습니다.",
+    description: "웹드라마 전체 8부 본편 편집, 예고편 편집 및 종편 관리를 담당.",
     thumbnail: "",
     tools: ["Premiere Pro", "편집감독"],
     youtubeUrl: "https://youtu.be/kmgt51TxE_g?si=ilJ9MxxEhhTnmilx",
@@ -295,7 +288,7 @@ export const works: WorkItem[] = [
     id: "real-time-love",
     title: "리얼:타임:러브 시즌3",
     category: "편집",
-    description: "와이낫미디어 기획 웹드라마. 본편 가편집 및 1차 편집을 담당했습니다.",
+    description: "와이낫미디어 기획 웹드라마. 본편 가편집 및 1차 편집을 담당.",
     thumbnail: "",
     tools: ["Premiere Pro", "가편집"],
     youtubeUrl: "https://youtu.be/-f-dEG4_g80?si=I37ArBcs5kB0zFE7",
@@ -316,17 +309,106 @@ export const works: WorkItem[] = [
 ];
 
 // ===== CASE STUDY POSTS =====
+export interface CaseStudyEmbed {
+  title: string;
+  description: string;
+  href: string;
+  tag: string;
+}
+
 export interface CaseStudyPost {
   id: string;
   date: string;
   title: string;
   excerpt: string;
   content: string;
+  embeds?: CaseStudyEmbed[];
 }
 
 export const caseStudyPosts: CaseStudyPost[] = [
   // 새 글을 추가하려면 여기에 같은 형식으로 넣으면 됩니다.
   // GitHub 웹에서 이 파일을 편집하고 저장하면 자동 배포됩니다.
+  {
+    id: "failed-production-tracking",
+    date: "2026.03",
+    title: "AI 영상 제작 기록을 남기려다 실패한 이야기",
+    excerpt:
+      "제작 과정을 체계적으로 기록하고 싶었다. 케이스 스터디 페이지도 설계하고, 자동 트래커도 만들어봤다. 하지만 API는 과금 문제, 수동 기록은 현실성 문제로 둘 다 실패했다.",
+    embeds: [
+      {
+        title: "Case Study 페이지 프로토타입",
+        description: "제작 대시보드, 6단계 파이프라인, 모델 비교, 크레딧 분석까지 — 완성된 영화의 메이킹 오브 페이지를 미리 설계해봤다.",
+        href: "demos/casestudy-draft.html",
+        tag: "PROTOTYPE · CASE STUDY",
+      },
+      {
+        title: "Production Log Tracker 프로토타입",
+        description: "클립 생성을 기록하고, 모델별 효율과 크레딧 소모를 자동 분석하는 도구. 체험용 데모까지 포함된 트래커 페이지.",
+        href: "demos/tracker-prototype.html",
+        tag: "PROTOTYPE · TRACKER TOOL",
+      },
+    ],
+    content: `AI로 영상을 만들기 시작하면서, 제작 과정을 기록으로 남기고 싶다는 생각이 들었다.
+
+영화를 전통적으로 만들 때는 기록이 자연스럽게 쌓인다. 촬영 콜시트, 데일리 리포트, 편집 로그, DI 세션 기록 — 제작 시스템 자체가 기록을 만들어내는 구조다. 하지만 AI 영상 제작은 달랐다. 혼자서 프롬프트를 쓰고, 클립을 생성하고, 마음에 안 들면 다시 돌리고 — 이 과정이 어디에도 남지 않았다.
+
+87개 클립을 생성하면서 어떤 모델을 썼는지, 크레딧을 얼마나 소모했는지, 채택률이 어땠는지. 이런 데이터가 있으면 다음 프로젝트에서 더 효율적으로 작업할 수 있을 텐데.
+
+
+— 시도 1: 제작 과정을 보여주는 케이스 스터디 페이지
+
+먼저, 완성된 영화의 제작 과정을 한 페이지에 정리하는 케이스 스터디 페이지를 설계했다.
+
+{{embed:0}}
+
+비용 대시보드, 6단계 파이프라인(시나리오 분석 → 캐릭터 디자인 → 로케이션 → 카메라 설계 → 샷 생성 → 후반), 모델 비교, 크레딧 사용 내역까지 — 제작의 전 과정을 투명하게 보여주는 구조였다.
+
+디자인은 마음에 들었다. 문제는 데이터였다. 이 페이지를 채우려면 제작 과정에서 데이터를 수집해야 했다.
+
+
+— 시도 2: 자동으로 기록하는 트래커
+
+그래서 제작 중에 실시간으로 데이터를 기록하는 트래커를 만들어봤다.
+
+{{embed:1}}
+
+클립을 생성할 때마다 씬/샷 번호, 사용한 모델, 크레딧, 클립 길이, 채택 여부를 기록하고, 통계가 자동으로 계산되는 구조. 방문자가 직접 체험해볼 수 있는 데모까지 넣었다.
+
+여기서 두 가지 방향을 고민했다.
+
+
+— 방향 A: API로 자동 수집
+
+Higgsfield나 Kling 같은 AI 영상 도구의 API에 연결해서, 클립이 생성될 때마다 자동으로 트래커에 기록되게 하는 것. 이상적이었다. 프롬프트 입력하고 생성 버튼만 누르면 모든 데이터가 알아서 쌓이니까.
+
+하지만 현실은 달랐다. API를 사용하면 별도의 과금이 발생한다. 이미 월 구독료를 내고 있는데, 기록을 남기기 위해 추가 비용을 쓰는 건 배보다 배꼽이 더 큰 상황이었다.
+
+
+— 방향 B: 수동 기록
+
+그러면 직접 기록하면 되지 않나? 클립을 하나 만들 때마다 트래커를 열고, 모델 이름·크레딧·길이를 입력하면 된다.
+
+며칠 해봤다. 결론부터 말하면, 안 된다.
+
+AI 영상 제작의 리듬은 이렇다: 프롬프트를 쓰고, 결과를 보고, 마음에 안 들면 수정하고, 다시 생성하고, 또 보고, 또 수정하고. 이 반복이 하루에 수십 번 일어난다. 거기서 매번 탭을 전환해서 폼을 채우는 행위는 흐름을 완전히 끊어버렸다.
+
+세 번째 클립쯤에서 "나중에 한꺼번에 입력하지 뭐" 하게 되고, 그날 저녁에 "아 귀찮은데 내일 하자" 하게 되고, 다음 날은 어제 뭘 만들었는지도 기억이 안 난다.
+
+기록이라는 게 그렇다. 만드는 순간에 기록하지 않으면 의미가 없다. 그런데 만드는 순간에 기록하는 게 현실적으로 불가능하다. 모순이었다.
+
+
+— 결국 배운 것
+
+두 프로토타입 모두 실패했다. 하지만 실패에서 몇 가지를 배웠다.
+
+첫째, AI 영상 제작의 워크플로우는 아직 성숙하지 않았다. 전통 영상 제작에는 수십 년에 걸쳐 정착된 기록 시스템이 있다. AI 제작에는 그런 게 없다. 도구가 먼저 나오고, 프로세스는 아직 따라가지 못하고 있다.
+
+둘째, 기록의 마찰을 0에 가깝게 줄여야 한다. 수동 기록은 마찰이 너무 크다. 자동 기록은 비용이 든다. 이 사이 어딘가에 답이 있을 텐데, 아직 찾지 못했다.
+
+셋째, 이 실패 자체가 기록할 가치가 있다. AI 영상 제작이라는 새로운 분야에서 누구도 아직 "정답"을 가지고 있지 않다. 무엇을 시도했고, 왜 안 됐는지를 솔직하게 남기는 것. 그게 지금 할 수 있는 유일한 기록이다.
+
+프로토타입은 프로토타입으로 남겨둔다. 언젠가 API 비용이 합리적으로 내려가거나, 도구 자체에 기록 기능이 내장되는 날이 오면 — 그때 다시 꺼내볼 생각이다.`,
+  },
   {
     id: "why-traditional-cuts-fail-in-ai-video",
     date: "2026.03",
@@ -430,15 +512,6 @@ export const caseStudyPosts: CaseStudyPost[] = [
 실패했지만 방향은 보였다. 문제는 "AI가 영상을 못 만든다"가 아니라 "어떤 방식으로 지시해야 하는가"였다. 같은 도구를 써도 프롬프트를 어떻게 구성하느냐에 따라 결과물의 품질이 완전히 달라졌다.
 
 영화를 만드는 사람의 언어와 AI가 알아듣는 언어 사이에 번역이 필요하다는 것. 그 번역법을 찾아가는 것이 이 스터디의 다음 과제가 됐다.`,
-  },
-  {
-    id: "from-pd-to-ai-producer",
-    date: "2025.02",
-    title: "기획 PD에서 AI 프로듀서로 — 콘텐츠 제작의 변화",
-    excerpt:
-      "3년간의 드라마 기획·제작 경험을 바탕으로, AI를 현장의 문제를 해결하는 실질적 도구로 활용하는 프로듀서가 되기까지의 여정.",
-    content:
-      "여기에 전체 글 내용이 들어갑니다.",
   },
 ];
 

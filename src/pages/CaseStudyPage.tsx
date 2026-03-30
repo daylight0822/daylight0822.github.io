@@ -1,8 +1,65 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, X } from "lucide-react";
+import { ArrowLeft, X, ExternalLink } from "lucide-react";
 import { caseStudyPosts } from "../data/content";
+import type { CaseStudyEmbed } from "../data/content";
+
+function EmbedCard({ embed }: { embed: CaseStudyEmbed }) {
+  const base = import.meta.env.BASE_URL || "/";
+  const fullHref = `${base}${embed.href}`;
+
+  return (
+    <a
+      href={fullHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className="block my-6 rounded-xl border border-white/[0.08] bg-white/[0.03] hover:border-accent/40 hover:bg-accent/[0.03] transition-all duration-300 no-underline group"
+    >
+      <div className="p-5">
+        <p className="text-[10px] tracking-[2px] uppercase text-accent/70 mb-2 font-medium">
+          {embed.tag}
+        </p>
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h4 className="text-white text-[15px] font-medium mb-1.5 group-hover:text-accent transition-colors">
+              {embed.title}
+            </h4>
+            <p className="text-white/50 text-[13px] leading-relaxed">
+              {embed.description}
+            </p>
+          </div>
+          <ExternalLink
+            size={16}
+            className="text-white/20 group-hover:text-accent/60 transition-colors mt-1 flex-shrink-0"
+          />
+        </div>
+      </div>
+    </a>
+  );
+}
+
+function renderContent(content: string, embeds?: CaseStudyEmbed[]) {
+  if (!embeds || embeds.length === 0) {
+    return <span className="whitespace-pre-line">{content}</span>;
+  }
+
+  const parts = content.split(/\{\{embed:(\d+)\}\}/);
+  return parts.map((part, i) => {
+    if (i % 2 === 1) {
+      const embedIndex = parseInt(part, 10);
+      const embed = embeds[embedIndex];
+      if (embed) return <EmbedCard key={`embed-${i}`} embed={embed} />;
+      return null;
+    }
+    return (
+      <span key={`text-${i}`} className="whitespace-pre-line">
+        {part}
+      </span>
+    );
+  });
+}
 
 export default function CaseStudyPage() {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -123,8 +180,8 @@ export default function CaseStudyPage() {
                   </h2>
                 </div>
 
-                <div className="text-white/80 text-sm leading-[1.9] whitespace-pre-line">
-                  {activePost.content}
+                <div className="text-white/80 text-sm leading-[1.9]">
+                  {renderContent(activePost.content, activePost.embeds)}
                 </div>
               </motion.div>
             </div>

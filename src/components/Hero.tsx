@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,#0a0a0c_0%,#0f0f14_50%,#0a0a0c_100%)]" />
+      <div className="absolute inset-0 bg-bg" />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

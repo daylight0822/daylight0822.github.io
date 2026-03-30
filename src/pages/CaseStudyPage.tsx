@@ -15,7 +15,7 @@ function EmbedCard({ embed }: { embed: CaseStudyEmbed }) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => e.stopPropagation()}
-      className="block my-6 rounded-xl border border-white/[0.08] bg-white/[0.03] hover:border-accent/40 hover:bg-accent/[0.03] transition-all duration-300 no-underline group"
+      className="block my-6 rounded-xl border border-border bg-bg-elevated/50 hover:border-accent/40 hover:bg-accent/[0.03] transition-all duration-300 no-underline group"
     >
       <div className="p-5">
         <p className="text-[10px] tracking-[2px] uppercase text-accent/70 mb-2 font-medium">
@@ -23,16 +23,16 @@ function EmbedCard({ embed }: { embed: CaseStudyEmbed }) {
         </p>
         <div className="flex items-start justify-between gap-3">
           <div>
-            <h4 className="text-white text-[15px] font-medium mb-1.5 group-hover:text-accent transition-colors">
+            <h4 className="text-text text-[15px] font-medium mb-1.5 group-hover:text-accent transition-colors">
               {embed.title}
             </h4>
-            <p className="text-white/50 text-[13px] leading-relaxed">
+            <p className="text-text/50 text-[13px] leading-relaxed">
               {embed.description}
             </p>
           </div>
           <ExternalLink
             size={16}
-            className="text-white/20 group-hover:text-accent/60 transition-colors mt-1 flex-shrink-0"
+            className="text-text/20 group-hover:text-accent/60 transition-colors mt-1 flex-shrink-0"
           />
         </div>
       </div>
@@ -127,7 +127,7 @@ export default function CaseStudyPage() {
                       {post.date}
                     </p>
                     <div>
-                      <h2 className="text-white text-lg mb-3 font-medium group-hover:text-accent transition-colors duration-300">
+                      <h2 className="text-text text-lg mb-3 font-medium group-hover:text-accent transition-colors duration-300">
                         {post.title}
                       </h2>
                       <p className="text-text-dim text-sm leading-relaxed">
@@ -166,7 +166,7 @@ export default function CaseStudyPage() {
               >
                 <button
                   onClick={() => setActiveId(null)}
-                  className="absolute -top-10 right-0 text-text-dim hover:text-white transition-colors"
+                  className="absolute -top-10 right-0 text-text-dim hover:text-text transition-colors"
                 >
                   <X size={24} />
                 </button>
@@ -175,12 +175,12 @@ export default function CaseStudyPage() {
                   <p className="text-accent text-sm tracking-wider font-medium mb-3">
                     {activePost.date}
                   </p>
-                  <h2 className="text-white text-2xl md:text-3xl font-bold tracking-tight">
+                  <h2 className="text-text text-2xl md:text-3xl font-bold tracking-tight">
                     {activePost.title}
                   </h2>
                 </div>
 
-                <div className="text-white/80 text-sm leading-[1.9]">
+                <div className="text-text/80 text-sm leading-[1.9]">
                   {renderContent(activePost.content, activePost.embeds)}
                 </div>
               </motion.div>

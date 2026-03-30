@@ -89,10 +89,10 @@ export default function Works() {
                     <p className="text-accent text-[10px] tracking-[2px] mb-2 font-medium">
                       {work.category.toUpperCase()}
                     </p>
-                    <h3 className="text-white text-base font-medium mb-2 group-hover:text-accent transition-colors">
+                    <h3 className="text-text text-base font-medium mb-2 group-hover:text-accent transition-colors">
                       {work.title}
                     </h3>
-                    <p className="text-white/70 text-sm leading-relaxed mb-4">
+                    <p className="text-text/70 text-sm leading-relaxed mb-4">
                       {work.description}
                     </p>
                     <div className="flex gap-2 flex-wrap">
@@ -140,7 +140,7 @@ export default function Works() {
                 {/* Close */}
                 <button
                   onClick={() => setActiveId(null)}
-                  className="absolute -top-10 right-0 text-text-dim hover:text-white transition-colors"
+                  className="absolute -top-10 right-0 text-text-dim hover:text-text transition-colors"
                 >
                   <X size={24} />
                 </button>
@@ -150,7 +150,7 @@ export default function Works() {
                   <p className="text-accent text-[10px] tracking-[3px] uppercase mb-2 font-medium">
                     {activeWork.category.toUpperCase()}
                   </p>
-                  <h2 className="text-white text-2xl md:text-3xl font-bold tracking-tight">
+                  <h2 className="text-text text-2xl md:text-3xl font-bold tracking-tight">
                     {activeWork.title}
                   </h2>
                 </div>
@@ -183,7 +183,7 @@ export default function Works() {
                           {section.items.map((item, j) => (
                             <li
                               key={j}
-                              className="text-white/80 text-sm leading-relaxed flex gap-3"
+                              className="text-text/80 text-sm leading-relaxed flex gap-3"
                             >
                               <span className="text-accent/50 mt-1 shrink-0">
                                 •

@@ -66,10 +66,10 @@ export default function Gallery() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="mb-6">
-                  <h3 className="text-white text-lg font-medium mb-1">
+                  <h3 className="text-text text-lg font-medium mb-1">
                     {group.title}
                   </h3>
-                  <p className="text-white/60 text-sm">{group.description}</p>
+                  <p className="text-text/60 text-sm">{group.description}</p>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
@@ -147,7 +147,7 @@ export default function Gallery() {
               {/* Close */}
               <button
                 onClick={() => setViewer(null)}
-                className="absolute -top-10 right-0 text-text-dim hover:text-white transition-colors"
+                className="absolute -top-10 right-0 text-text-dim hover:text-text transition-colors"
               >
                 <X size={24} />
               </button>
@@ -156,7 +156,7 @@ export default function Gallery() {
               {viewer.imgIdx > 0 && (
                 <button
                   onClick={() => navigate(-1)}
-                  className="absolute -left-12 md:-left-14 text-text-muted hover:text-white transition-colors"
+                  className="absolute -left-12 md:-left-14 text-text-muted hover:text-text transition-colors"
                 >
                   <ChevronLeft size={28} />
                 </button>
@@ -177,7 +177,7 @@ export default function Gallery() {
               {viewer.imgIdx < totalInGroup - 1 && (
                 <button
                   onClick={() => navigate(1)}
-                  className="absolute -right-12 md:-right-14 text-text-muted hover:text-white transition-colors"
+                  className="absolute -right-12 md:-right-14 text-text-muted hover:text-text transition-colors"
                 >
                   <ChevronRight size={28} />
                 </button>
@@ -212,7 +212,7 @@ export default function Gallery() {
               {/* Close */}
               <button
                 onClick={() => setBundleViewer(null)}
-                className="absolute -top-10 right-0 text-text-dim hover:text-white transition-colors"
+                className="absolute -top-10 right-0 text-text-dim hover:text-text transition-colors"
               >
                 <X size={24} />
               </button>
@@ -221,7 +221,7 @@ export default function Gallery() {
               {bundleViewer.idx > 0 && (
                 <button
                   onClick={() => navigateBundle(-1)}
-                  className="absolute -left-12 md:-left-14 text-text-muted hover:text-white transition-colors"
+                  className="absolute -left-12 md:-left-14 text-text-muted hover:text-text transition-colors"
                 >
                   <ChevronLeft size={28} />
                 </button>
@@ -242,7 +242,7 @@ export default function Gallery() {
               {bundleViewer.idx < bundleViewer.images.length - 1 && (
                 <button
                   onClick={() => navigateBundle(1)}
-                  className="absolute -right-12 md:-right-14 text-text-muted hover:text-white transition-colors"
+                  className="absolute -right-12 md:-right-14 text-text-muted hover:text-text transition-colors"
                 >
                   <ChevronRight size={28} />
                 </button>

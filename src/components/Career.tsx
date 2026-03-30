@@ -124,7 +124,7 @@ export default function Career() {
                               {film.year}
                             </span>
                             <div>
-                              <span className="text-white text-sm font-medium">
+                              <span className="text-text text-sm font-medium">
                                 {film.title}
                               </span>
                               <span className="text-text-muted text-sm ml-2">
@@ -169,7 +169,7 @@ export default function Career() {
             >
               <button
                 onClick={() => setBadgeImg(null)}
-                className="absolute -top-10 right-0 text-text-dim hover:text-white transition-colors"
+                className="absolute -top-10 right-0 text-text-dim hover:text-text transition-colors"
               >
                 <X size={24} />
               </button>

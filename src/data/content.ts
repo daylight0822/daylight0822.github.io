@@ -66,7 +66,7 @@ export const careers: CareerItem[] = [
     title: "기획 PD",
     company: "스튜디오브이플러스",
     description:
-      "드라마 <수상한 그녀> 대본 기획 참여, 해외 세일즈 소재 관리, <0교시는 인싸타임> 전체 대본 기획~프로젝트 전 과정에 참여했습니다.",
+      "드라마 <수상한 그녀> 대본 기획 참여, 해외 세일즈 소재 관리, <0교시는 인싸타임> 전체 대본 기획, 제작, 후반, 홍보 및 마케팅, 유통까지 전과정에 참여했습니다.",
   },
   {
     period: "2022.03 — 2023.10",
@@ -148,11 +148,18 @@ export const filmography: FilmographyItem[] = [
 ];
 
 // ===== GALLERY (Etc) =====
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  /** 묶음 이미지: 썸네일 클릭 시 이 배열을 넘겨볼 수 있음 */
+  bundle?: { src: string; alt: string }[];
+}
+
 export interface GalleryGroup {
   id: string;
   title: string;
   description: string;
-  images: { src: string; alt: string }[];
+  images: GalleryImage[];
 }
 
 export const gallery: GalleryGroup[] = [
@@ -167,11 +174,17 @@ export const gallery: GalleryGroup[] = [
       { src: "/gallery/plans/04-antilove.png", alt: "ANTI LOVE LATION 기획안" },
       { src: "/gallery/plans/05-젠틀맨.png", alt: "젠틀맨을 위하여 기획안" },
       { src: "/gallery/plans/06-풀카운트.png", alt: "풀카운트 기획안" },
-      { src: "/gallery/txt/01-cover.png", alt: "TXT SPIN OFF: RHAPSODY 커버" },
-      { src: "/gallery/txt/02-keypoint.png", alt: "Key Point — 컨셉 확장과 변주" },
-      { src: "/gallery/txt/03-story.png", alt: "Story Concept — 나니아 연대기" },
-      { src: "/gallery/txt/04-image.png", alt: "Image Concept — 한복과 자개" },
-      { src: "/gallery/txt/05-md.png", alt: "MD Concept" },
+      {
+        src: "/gallery/txt/01-cover.png",
+        alt: "개인 취미 작업 — 아이돌 시즌그리팅 컨셉 기획",
+        bundle: [
+          { src: "/gallery/txt/01-cover.png", alt: "TXT SPIN OFF: RHAPSODY 커버" },
+          { src: "/gallery/txt/02-keypoint.png", alt: "Key Point — 컨셉 확장과 변주" },
+          { src: "/gallery/txt/03-story.png", alt: "Story Concept — 나니아 연대기" },
+          { src: "/gallery/txt/04-image.png", alt: "Image Concept — 한복과 자개" },
+          { src: "/gallery/txt/05-md.png", alt: "MD Concept" },
+        ],
+      },
     ],
   },
 ];

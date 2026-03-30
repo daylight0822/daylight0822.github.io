@@ -68,7 +68,7 @@ export default function AICinema() {
                 {playing && videoId ? (
                   /* 인라인 재생 */
                   <iframe
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&hd=1`}
                     title={item.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -116,6 +116,12 @@ export default function AICinema() {
             <ChevronRight size={18} className="text-text" />
           </button>
         </div>
+
+        {/* 화질 안내 */}
+        <p className="text-text-muted text-[11px] mt-3 text-right tracking-wide">
+          화질이 낮게 보인다면, 영상 재생 후 ⚙️ 설정에서 1080p를 선택하거나{" "}
+          <span className="text-text-dim">YouTube에서 직접 시청</span>해 주세요.
+        </p>
 
         {/* 썸네일 스트립 + 카운터 */}
         <div className="flex items-center justify-between mt-4">

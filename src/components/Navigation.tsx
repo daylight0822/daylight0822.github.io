@@ -177,12 +177,6 @@ export default function Navigation() {
             </button>
           ))}
           <button
-            onClick={() => navigate("/journal")}
-            className="text-xs tracking-[0.15em] text-text-dim hover:text-text transition-colors duration-300"
-          >
-            JOURNAL
-          </button>
-          <button
             onClick={() => navigate("/case-study")}
             className="text-xs tracking-[0.15em] text-bg bg-accent hover:bg-accent-dim px-4 py-2 rounded-full font-medium transition-colors duration-300"
           >
@@ -218,15 +212,6 @@ export default function Navigation() {
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={() => {
-                  navigate("/journal");
-                  setMobileOpen(false);
-                }}
-                className="text-left text-sm tracking-[0.15em] text-text-dim hover:text-text transition-colors"
-              >
-                JOURNAL
-              </button>
               <button
                 onClick={() => {
                   navigate("/case-study");

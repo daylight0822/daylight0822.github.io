@@ -26,10 +26,8 @@ function parseFrontmatter(raw: string): { meta: Record<string, string>; content:
   return { meta, content: match[2] };
 }
 
-export function loadJournalPosts(): JournalPost[] {
-  const modules = import.meta.glob("/content/journal/*.md", { eager: true, query: "?raw", import: "default" });
+function loadFromGlob(modules: Record<string, unknown>): JournalPost[] {
   const posts: JournalPost[] = [];
-
   for (const [path, raw] of Object.entries(modules)) {
     const slug = path.split("/").pop()!.replace(/\.md$/, "");
     const { meta, content } = parseFrontmatter(raw as string);
@@ -42,6 +40,15 @@ export function loadJournalPosts(): JournalPost[] {
       content,
     });
   }
-
   return posts.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function loadProcessPosts(): JournalPost[] {
+  const modules = import.meta.glob("/content/process/*.md", { eager: true, query: "?raw", import: "default" });
+  return loadFromGlob(modules);
+}
+
+export function loadThoughtsPosts(): JournalPost[] {
+  const modules = import.meta.glob("/content/thoughts/*.md", { eager: true, query: "?raw", import: "default" });
+  return loadFromGlob(modules);
 }

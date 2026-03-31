@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Obsidian
+.obsidian/workspace*.json
+.obsidian/graph.json
+.obsidian/backlink.json
+.obsidian/plugins/obsidian-git/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

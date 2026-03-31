@@ -164,6 +164,26 @@ export interface GalleryGroup {
 
 export const gallery: GalleryGroup[] = [
   {
+    id: "portfolio-old",
+    title: "이전 포트폴리오",
+    description: "드라마 기획·제작·마케팅·편집 경력을 정리한 포트폴리오 (7p)",
+    images: [
+      {
+        src: "/gallery/portfolio-old/01.png",
+        alt: "이전 포트폴리오 — 표지",
+        bundle: [
+          { src: "/gallery/portfolio-old/01.png", alt: "표지 — PORTFOLIO KOO DAYOUNG" },
+          { src: "/gallery/portfolio-old/02.png", alt: "Profile — 소개 / 학력 / 스킬 / 경력" },
+          { src: "/gallery/portfolio-old/03.png", alt: "드라마 — 교시는 인싸타임 (기획/제작/마케팅)" },
+          { src: "/gallery/portfolio-old/04.png", alt: "드라마 — 브랜딩 인생주동 / 수상할 그녀" },
+          { src: "/gallery/portfolio-old/05.png", alt: "기획안 — 고구려, ANTI LOVE LATION, 2-3 승강장 등" },
+          { src: "/gallery/portfolio-old/06.png", alt: "편집 — 숨은 그놈 찾기 / 리얼타임러브 Part.3" },
+          { src: "/gallery/portfolio-old/07.png", alt: "기타 — 콘텐츠 진흥원 지원사업 / MBN 헬로트로트" },
+        ],
+      },
+    ],
+  },
+  {
     id: "plans",
     title: "PPT",
     description: "드라마 기획안 및 기타 PPT자료",

@@ -165,8 +165,8 @@ export interface GalleryGroup {
 export const gallery: GalleryGroup[] = [
   {
     id: "plans",
-    title: "기획안 포트폴리오 > PPT",
-    description: "드라마 기획 단계에서 작성한 기획안 자료들",
+    title: "PPT",
+    description: "드라마 기획안 및 기타 PPT자료",
     images: [
       { src: "/gallery/plans/01-승강장.png", alt: "2-3 승강장 기획안" },
       { src: "/gallery/plans/02-경성부녀자.png", alt: "경성부녀자 고민상담소 기획안" },

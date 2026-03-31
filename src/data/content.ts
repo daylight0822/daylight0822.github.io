@@ -185,8 +185,8 @@ export const gallery: GalleryGroup[] = [
   },
   {
     id: "plans",
-    title: "PPT",
-    description: "드라마 기획안 및 기타 PPT자료",
+    title: "PPT 자료들",
+    description: "",
     images: [
       { src: "/gallery/plans/01-승강장.png", alt: "2-3 승강장 기획안" },
       { src: "/gallery/plans/02-경성부녀자.png", alt: "경성부녀자 고민상담소 기획안" },
@@ -358,7 +358,8 @@ export interface CaseStudyPost {
   embeds?: CaseStudyEmbed[];
 }
 
-export const caseStudyPosts: CaseStudyPost[]  // 새 글을 추가하려면 여기에 같은 형식으로 넣으면 됩니다.
+export const caseStudyPosts: CaseStudyPost[] = [
+  // 새 글을 추가하려면 여기에 같은 형식으로 넣으면 됩니다.
   // GitHub 웹에서 이 파일을 편집하고 저장하면 자동 배포됩니다.
   {
     id: "after-sora-shutdown",

@@ -130,15 +130,17 @@ export default function Navigation() {
   }, []);
 
   const scrollTo = (target: string) => {
+    setMobileOpen(false);
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
         document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      }, 300);
     } else {
-      document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+      }, 150);
     }
-    setMobileOpen(false);
   };
 
   return (

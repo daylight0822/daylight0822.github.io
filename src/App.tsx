@@ -3,10 +3,12 @@ import HomePage from "./pages/HomePage";
 import CaseStudyPage from "./pages/CaseStudyPage";
 import WorkDetailPage from "./pages/WorkDetailPage";
 import ScrollToTop from "./components/ScrollToTop";
+import SiteProtection from "./components/SiteProtection";
 
 function App() {
   return (
     <HashRouter>
+      <SiteProtection />
       <ScrollToTop />
       <div className="min-h-screen bg-bg">
         <Routes>

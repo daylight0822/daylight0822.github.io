@@ -41,7 +41,7 @@ export default function Profile() {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { label: "MAJOR", value: "영화 (편집전공)" },
-                { label: "TOOLS", value: "Premiere Pro, After Effects, Figma, Photoshop, Higgsfield, Claude Code" },
+                { label: "TOOLS", value: "Premiere Pro, After Effects, Figma, Photoshop, Higgsfield, Kling, Nano Banana, Claude Code" },
                 { label: "BACKGROUND", value: "드라마 기획PD 4년" },
                 { label: "CONTACT", value: profile.email },
               ].map((item) => (

@@ -375,7 +375,30 @@ export default function CaseStudyPage() {
                   </h2>
                 </div>
                 <article className="journal-content text-text/80 text-sm leading-[1.9]">
-                  <Markdown remarkPlugins={[remarkGfm]}>{activeMarkdownPost.content}</Markdown>
+                  <Markdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      a: ({ href, children }) => {
+                        const base = import.meta.env.BASE_URL || "/";
+                        const isExternal = href?.startsWith("http");
+                        const resolvedHref = isExternal ? href : `${base}${href}`;
+                        return (
+                          <a
+                            href={resolvedHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1.5 px-4 py-2.5 my-3 rounded-lg border border-accent/30 bg-accent/[0.05] text-accent hover:bg-accent/[0.12] hover:border-accent/50 transition-all duration-300 no-underline text-[13px] font-medium tracking-wide"
+                          >
+                            {children}
+                            <ExternalLink size={13} className="opacity-60" />
+                          </a>
+                        );
+                      },
+                    }}
+                  >
+                    {activeMarkdownPost.content}
+                  </Markdown>
                 </article>
               </motion.div>
             </div>

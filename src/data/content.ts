@@ -355,6 +355,7 @@ export interface CaseStudyPost {
   title: string;
   excerpt: string;
   content: string;
+  externalUrl?: string;
   embeds?: CaseStudyEmbed[];
 }
 
@@ -364,9 +365,10 @@ export const caseStudyPosts: CaseStudyPost[] = [
   {
     id: "comfyui-workflow-design",
     date: "2026.04",
-    title: "ComfyUI 워크플로우 설계 — 노드 기반 AI 이미지 파이프라인을 직접 구축하다",
+    title: "ComfyUI 워크플로우 학습 — 노드 기반 AI 이미지 생성을 처음부터 배워보다",
     excerpt:
-      "Midjourney나 DALL-E처럼 프롬프트만 입력하는 방식이 아니라, 모델 로딩부터 샘플링, 디코딩까지 전 과정을 노드로 분해하여 직접 설계했다. VFX 현장에서 ComfyUI가 필요한 이유와, 기본 워크플로우 구축 과정을 기록한다.",
+      "Midjourney나 DALL-E처럼 프롬프트만 입력하는 방식이 아니라, 모델 로딩부터 샘플링, 디코딩까지 전 과정을 노드로 분해하여 직접 다뤄봤다. VFX 현장에서 ComfyUI가 필요한 이유와, 기본 워크플로우 학습 과정을 기록한다.",
+    externalUrl: "demos/comfyui-portfolio.html",
     content: `— 왜 ComfyUI인가
 
 AI 이미지 생성 도구는 크게 두 종류로 나눌 수 있다.

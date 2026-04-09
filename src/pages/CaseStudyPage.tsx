@@ -170,7 +170,14 @@ export default function CaseStudyPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: i * 0.08 }}
-                      onClick={() => setActivePostId(post.id)}
+                      onClick={() => {
+                        if (post.externalUrl) {
+                          const base = import.meta.env.BASE_URL || "/";
+                          window.location.href = `${base}${post.externalUrl}`;
+                        } else {
+                          setActivePostId(post.id);
+                        }
+                      }}
                       className="group py-8 border-b border-border last:border-b-0 cursor-pointer"
                     >
                       <div className="grid md:grid-cols-[100px_1fr] gap-4 md:gap-8">

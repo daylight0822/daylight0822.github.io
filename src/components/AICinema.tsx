@@ -34,7 +34,7 @@ export default function AICinema() {
     : "";
 
   return (
-    <section id="ai-works" className="py-32 px-5 md:px-10">
+    <section id="ai-works" className="py-32 px-5 md:px-10 bg-bg-card/50">
       <div className="max-w-[1100px] mx-auto">
         {/* 헤더 */}
         <motion.div

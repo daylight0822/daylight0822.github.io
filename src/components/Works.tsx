@@ -21,7 +21,7 @@ export default function Works() {
 
   return (
     <>
-      <section id="works" className="py-32 px-5 md:px-10">
+      <section id="works" className="py-32 px-5 md:px-10 bg-bg-card/50">
         <div className="max-w-[1100px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}

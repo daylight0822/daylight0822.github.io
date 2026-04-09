@@ -178,7 +178,7 @@ export default function Navigation() {
           ))}
           <button
             onClick={() => navigate("/case-study")}
-            className="text-xs tracking-[0.15em] text-bg bg-accent hover:bg-accent-dim px-4 py-2 rounded-full font-medium transition-colors duration-300"
+            className="text-xs tracking-[0.15em] text-accent border border-accent/30 hover:border-accent hover:bg-accent/5 px-4 py-2 rounded-full font-medium transition-all duration-300"
           >
             CASE STUDY
           </button>

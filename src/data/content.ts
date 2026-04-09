@@ -362,6 +362,63 @@ export const caseStudyPosts: CaseStudyPost[] = [
   // 새 글을 추가하려면 여기에 같은 형식으로 넣으면 됩니다.
   // GitHub 웹에서 이 파일을 편집하고 저장하면 자동 배포됩니다.
   {
+    id: "comfyui-workflow-design",
+    date: "2026.04",
+    title: "ComfyUI 워크플로우 설계 — 노드 기반 AI 이미지 파이프라인을 직접 구축하다",
+    excerpt:
+      "Midjourney나 DALL-E처럼 프롬프트만 입력하는 방식이 아니라, 모델 로딩부터 샘플링, 디코딩까지 전 과정을 노드로 분해하여 직접 설계했다. VFX 현장에서 ComfyUI가 필요한 이유와, 기본 워크플로우 구축 과정을 기록한다.",
+    content: `— 왜 ComfyUI인가
+
+AI 이미지 생성 도구는 크게 두 종류로 나눌 수 있다.
+
+하나는 "자판기형" — Midjourney, DALL-E, Nanobanana처럼 프롬프트를 입력하면 결과물이 나오는 방식. 간편하지만, 생성 과정의 중간 단계를 제어할 수 없다.
+
+다른 하나는 "주방형" — ComfyUI처럼 재료(모델), 레시피(워크플로우), 조리법(샘플러 설정)을 직접 설계하는 방식. 복잡하지만, VFX 현장에서 요구하는 수준의 제어가 가능하다.
+
+VFX 프로덕션에서는 같은 캐릭터를 여러 각도로 생성하거나, 스타일은 유지하면서 배경만 바꾸거나, 한 번 만든 파이프라인을 팀 전체가 반복 사용해야 한다. 자판기로는 불가능한 작업이다.
+
+
+— 기본 워크플로우 구축
+
+Google Colab의 T4 GPU 환경에서 ComfyUI를 실행하고, 6개의 핵심 노드로 Text-to-Image 파이프라인을 구축했다.
+
+1) Load Checkpoint — Stable Diffusion v1.5 모델을 GPU 메모리에 로드. 이 노드에서 MODEL, CLIP, VAE 세 가지 출력이 나온다.
+
+2) CLIP Text Encode (Positive) — "a dark cathedral with glowing cracks, cinematic lighting, concept art" — 원하는 이미지를 텍스트로 기술하면, CLIP이 이를 AI가 이해할 수 있는 수치 벡터(conditioning)로 변환한다.
+
+3) CLIP Text Encode (Negative) — "blurry, ugly, low quality, text" — 피하고 싶은 요소를 지정. Positive와 Negative의 균형이 결과물의 품질을 결정한다.
+
+4) KSampler — 이미지 생성의 핵심 엔진. 빈 잠재 공간(latent space)에서 노이즈를 반복적으로 제거하며 이미지를 만든다. Steps(20), CFG Scale(8.0), Sampler(euler) 등의 파라미터로 생성 품질을 제어한다.
+
+5) VAE Decode — KSampler가 만든 잠재 공간 데이터를 사람이 볼 수 있는 픽셀 이미지로 변환한다.
+
+6) Save Image — 최종 이미지를 파일로 저장. 메타데이터(프롬프트, 설정값)가 이미지에 포함된다.
+
+
+— VFX 현장 적용 시나리오
+
+시나리오 1: 콘셉트 아트 옵션 제안
+연출팀이 "이 장면의 분위기를 3가지로 보여주세요"라고 요청하면, 동일한 워크플로우에서 프롬프트와 시드값만 변경하여 30분 내에 3~5개의 비주얼 옵션을 생성할 수 있다.
+
+시나리오 2: 스타일 일관성 유지
+ControlNet과 IP-Adapter 노드를 추가하면, 레퍼런스 이미지의 스타일을 유지하면서 구도나 배경만 바꿀 수 있다. 시퀀스 전체의 비주얼 톤 통일에 필수적이다.
+
+시나리오 3: 프리비즈 자동화
+스토리보드의 각 컷을 워크플로우 템플릿으로 만들어두면, 프롬프트만 교체하여 8~12컷의 프리비즈를 일관된 스타일로 빠르게 생성할 수 있다.
+
+
+— 다음 단계
+
+Phase 2: SDXL, Flux 등 최신 모델 적용 + LoRA로 특정 스타일 학습
+Phase 3: ControlNet(구도/포즈 제어) + IP-Adapter(스타일 전이) 실습
+Phase 4: 프로젝트별 워크플로우 템플릿 제작 + 배치 프로세싱
+
+
+— 정리
+
+ComfyUI는 "AI로 예쁜 그림 만들기"가 아니다. 제작 현장에서 연출/VFX 팀과 소통하기 위한 시각 자료를, 의도대로 제어하면서 빠르게 만드는 도구다. 노드 하나하나가 파이프라인의 한 단계이고, 그 연결 구조를 이해하는 것이 곧 AI 기반 제작 역량이다.`,
+  },
+  {
     id: "after-sora-shutdown",
     date: "2026.03",
     title: "Sora가 문을 닫은 뒤 — AI 영상 제작자는 어디로 가야 하는가",

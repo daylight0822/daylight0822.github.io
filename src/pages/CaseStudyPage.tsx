@@ -24,7 +24,7 @@ function EmbedCard({ embed }: { embed: CaseStudyEmbed }) {
       className="block my-6 rounded-xl border border-border bg-bg-elevated/50 hover:border-accent/40 hover:bg-accent/[0.03] transition-all duration-300 no-underline group"
     >
       <div className="p-5">
-        <p className="text-[10px] tracking-[2px] uppercase text-accent/70 mb-2 font-medium">
+        <p className="text-xs tracking-[2px] uppercase text-accent/70 mb-2 font-medium">
           {embed.tag}
         </p>
         <div className="flex items-start justify-between gap-3">
@@ -127,7 +127,7 @@ export default function CaseStudyPage() {
             transition={{ duration: 0.6 }}
             className="mb-10"
           >
-            <p className="text-accent text-[10px] tracking-[3px] uppercase mb-3 font-medium">
+            <p className="text-accent text-xs tracking-[3px] uppercase mb-3 font-medium">
               THOUGHTS & PROCESS
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-text mb-4">

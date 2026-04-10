@@ -11,7 +11,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 600px 400px at 30% 50%, rgba(232,197,71,0.05), transparent), radial-gradient(ellipse 500px 500px at 70% 40%, rgba(74,143,232,0.03), transparent)",
+            "radial-gradient(ellipse 600px 400px at 30% 50%, rgba(0,229,255,0.06), transparent), radial-gradient(ellipse 500px 500px at 70% 40%, rgba(255,64,129,0.04), transparent)",
         }}
       />
 
@@ -31,7 +31,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-accent mb-6"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-6"
+          style={{ background: "linear-gradient(135deg, #00e5ff, #ff4081)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
         >
           {profile.name}
         </motion.h1>
@@ -60,7 +61,7 @@ export default function Hero() {
         transition={{ delay: 2 }}
         className="absolute bottom-10 flex flex-col items-center gap-2"
       >
-        <span className="text-text-muted text-[10px] tracking-[0.3em]">
+        <span className="text-text-muted text-xs tracking-[0.3em]">
           SCROLL
         </span>
         <motion.div

@@ -12,7 +12,7 @@ export default function Footer() {
           daylight0822@naver.com
         </a>
         <div className="divider-line mb-8" />
-        <p className="text-text-muted/40 text-xs tracking-wider">
+        <p className="text-text-muted text-xs tracking-wider">
           &copy; {new Date().getFullYear()} DAYLIGHT. All rights reserved.
         </p>
       </div>

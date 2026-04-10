@@ -48,7 +48,7 @@ export default function Gallery() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <p className="text-accent text-[10px] tracking-[3px] uppercase mb-3 font-medium">
+            <p className="text-accent text-xs tracking-[3px] uppercase mb-3 font-medium">
               ETC
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text">
@@ -93,7 +93,7 @@ export default function Gallery() {
                       {img.bundle && (
                         <div className="absolute top-3 right-3 bg-bg/80 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1.5 border border-accent/30">
                           <Layers size={12} className="text-accent" />
-                          <span className="text-accent text-[10px] font-medium tracking-wider">
+                          <span className="text-accent text-xs font-medium tracking-wider">
                             {img.bundle.length}장
                           </span>
                         </div>

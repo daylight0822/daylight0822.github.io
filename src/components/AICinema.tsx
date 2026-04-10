@@ -44,7 +44,7 @@ export default function AICinema() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-accent text-[10px] tracking-[3px] uppercase mb-3 font-medium">
+          <p className="text-accent text-xs tracking-[3px] uppercase mb-3 font-medium">
             AI VIDEO PRODUCTION
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text">
@@ -118,7 +118,7 @@ export default function AICinema() {
         </div>
 
         {/* 화질 안내 */}
-        <p className="text-text-muted text-[11px] mt-3 text-right tracking-wide">
+        <p className="text-text-muted text-[13px] mt-3 text-right tracking-wide">
           화질이 낮게 보인다면, 영상 재생 후 ⚙️ 설정에서 1080p를 선택하거나{" "}
           <span className="text-text-dim">YouTube에서 직접 시청</span>해 주세요.
         </p>

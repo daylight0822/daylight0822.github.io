@@ -61,7 +61,7 @@ export default function WorkDetailPage() {
             transition={{ duration: 0.6 }}
             className="mb-3"
           >
-            <p className="text-accent text-[10px] tracking-[3px] uppercase mb-3 font-medium">
+            <p className="text-accent text-xs tracking-[3px] uppercase mb-3 font-medium">
               {work.category.toUpperCase()}
             </p>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-text">
@@ -79,7 +79,7 @@ export default function WorkDetailPage() {
             {work.tools.map((tool) => (
               <span
                 key={tool}
-                className="text-[10px] tracking-wider text-accent-dim bg-accent-glow px-2.5 py-1 rounded-full"
+                className="text-xs tracking-wider text-accent-dim bg-accent-glow px-2.5 py-1 rounded-full"
               >
                 {tool}
               </span>

@@ -17,7 +17,7 @@ export default function CaseStudyPreview() {
           className="mb-16 flex items-end justify-between"
         >
           <div>
-            <p className="text-accent text-[10px] tracking-[3px] uppercase mb-3 font-medium">
+            <p className="text-accent text-xs tracking-[3px] uppercase mb-3 font-medium">
               THOUGHTS & PROCESS
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text">

@@ -15,26 +15,32 @@ const darkColors: Record<string, string> = {
   "--color-bg": "#0a0a0c",
   "--color-bg-card": "#111115",
   "--color-bg-elevated": "#1a1a20",
-  "--color-accent": "#e8c547",
-  "--color-accent-dim": "#c9a830",
-  "--color-accent-glow": "rgba(232, 197, 71, 0.12)",
+  "--color-accent": "#00e5ff",
+  "--color-accent-dim": "#0099bb",
+  "--color-accent-glow": "rgba(0, 229, 255, 0.10)",
+  "--color-accent-sub": "#ff4081",
+  "--color-accent-sub-dim": "#c7285e",
+  "--color-accent-sub-glow": "rgba(255, 64, 129, 0.10)",
   "--color-text": "#ffffff",
-  "--color-text-dim": "#c8c6c1",
-  "--color-text-muted": "#8a8880",
+  "--color-text-dim": "#d0d0d0",
+  "--color-text-muted": "#a0a0a0",
   "--color-border": "#2a2a30",
 };
 
 const lightColors: Record<string, string> = {
   "--color-bg": "#f5f4f0",
   "--color-bg-card": "#ffffff",
-  "--color-bg-elevated": "#eae8e3",
-  "--color-accent": "#1a2744",
-  "--color-accent-dim": "#2a3f66",
-  "--color-accent-glow": "rgba(26, 39, 68, 0.08)",
-  "--color-text": "#1a1a1a",
-  "--color-text-dim": "#4a4a4a",
-  "--color-text-muted": "#8a8a8a",
-  "--color-border": "#d5d3ce",
+  "--color-bg-elevated": "#e8e6e0",
+  "--color-accent": "#007a95",
+  "--color-accent-dim": "#005a70",
+  "--color-accent-glow": "rgba(0, 122, 149, 0.10)",
+  "--color-accent-sub": "#b8204e",
+  "--color-accent-sub-dim": "#8e1840",
+  "--color-accent-sub-glow": "rgba(184, 32, 78, 0.10)",
+  "--color-text": "#111111",
+  "--color-text-dim": "#333333",
+  "--color-text-muted": "#666666",
+  "--color-border": "#c8c5be",
 };
 
 function ThemeToggle({
@@ -70,8 +76,8 @@ function ThemeToggle({
         strokeWidth={2.5}
         className="relative z-10"
         style={{
-          color: isLight ? "#b8972a" : "#6a6860",
-          filter: isLight ? "drop-shadow(0 0 2px rgba(184,151,42,0.4))" : "none",
+          color: isLight ? "#e88a00" : "#6a6860",
+          filter: isLight ? "drop-shadow(0 0 2px rgba(232,138,0,0.4))" : "none",
         }}
       />
       <Moon
@@ -79,8 +85,8 @@ function ThemeToggle({
         strokeWidth={2.5}
         className="relative z-10"
         style={{
-          color: isLight ? "#8a8a8a" : "#d4b73e",
-          filter: !isLight ? "drop-shadow(0 0 2px rgba(212,183,62,0.4))" : "none",
+          color: isLight ? "#8a8a8a" : "#00e5ff",
+          filter: !isLight ? "drop-shadow(0 0 2px rgba(0,229,255,0.4))" : "none",
         }}
       />
       <motion.div
@@ -88,10 +94,10 @@ function ThemeToggle({
         style={{
           width: dotSize,
           height: dotSize,
-          backgroundColor: isLight ? "#ffffff" : "#e8c547",
+          backgroundColor: isLight ? "#ffffff" : "#00e5ff",
           boxShadow: isLight
             ? "0 2px 6px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15)"
-            : "0 2px 6px rgba(0,0,0,0.4), 0 0 8px rgba(232,197,71,0.2)",
+            : "0 2px 6px rgba(0,0,0,0.4), 0 0 8px rgba(0,229,255,0.3)",
         }}
         animate={{ left: isLight ? "4px" : "calc(100% - 4px)", x: isLight ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 500, damping: 30 }}

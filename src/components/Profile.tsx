@@ -12,7 +12,7 @@ export default function Profile() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-accent text-[10px] tracking-[3px] uppercase mb-3 font-medium">
+          <p className="text-accent text-xs tracking-[3px] uppercase mb-3 font-medium">
             ABOUT
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text">
@@ -46,7 +46,7 @@ export default function Profile() {
                 { label: "CONTACT", value: profile.email },
               ].map((item) => (
                 <div key={item.label}>
-                  <p className="text-accent text-[10px] tracking-[2px] mb-2 font-medium">
+                  <p className="text-accent text-xs tracking-[2px] mb-2 font-medium">
                     {item.label}
                   </p>
                   <p className="text-text-dim text-sm">{item.value}</p>

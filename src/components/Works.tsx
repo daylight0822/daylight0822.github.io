@@ -30,7 +30,7 @@ export default function Works() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <p className="text-accent text-[10px] tracking-[3px] uppercase mb-3 font-medium">
+            <p className="text-accent text-xs tracking-[3px] uppercase mb-3 font-medium">
               PORTFOLIO
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text">
@@ -86,7 +86,7 @@ export default function Works() {
 
                   {/* Info */}
                   <div className="p-5">
-                    <p className="text-accent text-[10px] tracking-[2px] mb-2 font-medium">
+                    <p className="text-accent text-xs tracking-[2px] mb-2 font-medium">
                       {work.category.toUpperCase()}
                     </p>
                     <h3 className="text-text text-base font-medium mb-2 group-hover:text-accent transition-colors">
@@ -99,7 +99,7 @@ export default function Works() {
                       {work.tools.map((tool) => (
                         <span
                           key={tool}
-                          className="text-[10px] tracking-wider text-accent-dim bg-accent-glow px-2.5 py-1 rounded-full"
+                          className="text-xs tracking-wider text-accent-dim bg-accent-glow px-2.5 py-1 rounded-full"
                         >
                           {tool}
                         </span>
@@ -147,7 +147,7 @@ export default function Works() {
 
                 {/* Category + Title */}
                 <div className="mb-6">
-                  <p className="text-accent text-[10px] tracking-[3px] uppercase mb-2 font-medium">
+                  <p className="text-accent text-xs tracking-[3px] uppercase mb-2 font-medium">
                     {activeWork.category.toUpperCase()}
                   </p>
                   <h2 className="text-text text-2xl md:text-3xl font-bold tracking-tight">
@@ -202,7 +202,7 @@ export default function Works() {
                   {activeWork.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="text-[10px] tracking-wider text-accent-dim bg-accent-glow px-2.5 py-1 rounded-full"
+                      className="text-xs tracking-wider text-accent-dim bg-accent-glow px-2.5 py-1 rounded-full"
                     >
                       {tool}
                     </span>

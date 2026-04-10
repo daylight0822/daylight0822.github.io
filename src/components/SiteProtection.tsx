@@ -75,7 +75,7 @@ export default function SiteProtection() {
           document.body.innerHTML = `
             <div style="
               display:flex;align-items:center;justify-content:center;
-              height:100vh;background:#0a0a0c;color:#e8c547;
+              height:100vh;background:#0a0a0c;color:#00e5ff;
               font-family:sans-serif;text-align:center;padding:2rem;
             ">
               <div>
@@ -91,7 +91,7 @@ export default function SiteProtection() {
     };
 
     // Console warning
-    const warningStyle = "color:#e8c547;font-size:24px;font-weight:bold;";
+    const warningStyle = "color:#00e5ff;font-size:24px;font-weight:bold;";
     const textStyle = "color:#c8c6c1;font-size:14px;";
     console.log("%c⚠️ 경고!", warningStyle);
     console.log(

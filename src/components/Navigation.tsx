@@ -5,9 +5,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
   { label: "PROFILE", target: "profile" },
-  { label: "AI WORKS", target: "ai-works" },
   { label: "CAREER", target: "career" },
   { label: "WORKS", target: "works" },
+  { label: "AI WORKS", target: "ai-works" },
+  { label: "MOODBOARDS", target: "moodboards" },
   { label: "GALLERY", target: "gallery" },
 ];
 

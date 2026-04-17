@@ -147,6 +147,39 @@ export const filmography: FilmographyItem[] = [
   },
 ];
 
+// ===== MOODBOARDS =====
+export interface MoodBoardItem {
+  id: string;
+  titleKo: string;
+  titleEn: string;
+  subtitle: string;
+  cover: string;
+  thumbs: string[];
+  toneAnchor: string;
+  genre: string;
+  url: string;
+}
+
+export const moodboards: MoodBoardItem[] = [
+  {
+    id: "dust-below",
+    titleKo: "행군",
+    titleEn: "Dust Below",
+    subtitle:
+      "기후 붕괴 이후 사막화된 한반도. 감염된 망자들이 모래 아래서 기어 올라오는 황폐한 대륙에서, 마지막 생존 부대가 오아시스 요새를 향한 최후의 행군을 시작한다.",
+    cover: "/moodboards/dust-below/generated-higgs/scene1-A.webp",
+    thumbs: [
+      "/moodboards/dust-below/generated-higgs/scene1-A.webp",
+      "/moodboards/dust-below/generated-higgs/scene1-B.webp",
+      "/moodboards/dust-below/generated-higgs/scene2-A.webp",
+      "/moodboards/dust-below/generated-higgs/scene4-A.webp",
+    ],
+    toneAnchor: "드라마 택배기사",
+    genre: "포스트 아포칼립스 좀비 액션",
+    url: "/moodboards/dust-below/index.html",
+  },
+];
+
 // ===== GALLERY (Etc) =====
 export interface GalleryImage {
   src: string;

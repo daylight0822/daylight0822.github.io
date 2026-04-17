@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>행군 Dust Below — Combined Mood Board</title>
+<style>
+  :root {
+    --sand: #c65d2e;
+    --blood: #6b0e0e;
+    --dust: #d4a55a;
+    --ash: #8a8578;
+    --paper: #f3ece2;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background:
+      radial-gradient(1400px 700px at 20% -10%, rgba(198,93,46,.3), transparent 60%),
+      radial-gradient(1000px 600px at 110% 30%, rgba(107,14,14,.2), transparent 60%),
+      #0a0907;
+    color: var(--paper);
+    font-family: "Pretendard", "Inter", "Malgun Gothic", sans-serif;
+    letter-spacing: -0.01em;
+  }
+  header {
+    padding: 64px 56px 32px;
+    border-bottom: 1px solid rgba(212,165,90,.18);
+  }
+  header .tag {
+    font-size: 12px;
+    letter-spacing: .32em;
+    color: var(--dust);
+    text-transform: uppercase;
+  }
+  header h1 {
+    font-size: 54px;
+    margin: 14px 0 8px;
+    font-weight: 800;
+    line-height: 1.05;
+  }
+  header .sub {
+    color: #b6aea2;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .meta {
+    display: flex;
+    gap: 28px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #cfc5b6;
+  }
+  .meta span b {
+    color: var(--sand);
+    margin-right: 6px;
+  }
+  .palette {
+    display: flex;
+    gap: 6px;
+    margin-top: 20px;
+  }
+  .palette i {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0,0,0,.5);
+  }
+  section {
+    padding: 44px 56px;
+  }
+  .scene-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .scene-sub {
+    font-size: 13px;
+    color: var(--dust);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .grid.five {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .grid.six {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .src {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    backdrop-filter: blur(6px);
+  }
+  .src.higgs {
+    background: rgba(198,93,46,.85);
+    color: #0a0907;
+  }
+  .src.polli {
+    background: rgba(42,61,92,.85);
+    color: var(--paper);
+    border: 1px solid rgba(212,165,90,.3);
+  }
+  .cell {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #1a1713;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(212,165,90,.18);
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  }
+  .cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+  }
+  .cell:hover img { transform: scale(1.04); }
+  .cell .label {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    font-size: 12px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: rgba(11,10,9,.75);
+    color: var(--paper);
+    letter-spacing: .14em;
+    border: 1px solid rgba(212,165,90,.25);
+    backdrop-filter: blur(8px);
+  }
+  .cell .opt {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 11px;
+    letter-spacing: .22em;
+    color: var(--sand);
+    background: rgba(11,10,9,.7);
+    padding: 4px 9px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  footer {
+    padding: 44px 56px 88px;
+    color: #8c857a;
+    font-size: 12px;
+    border-top: 1px solid rgba(212,165,90,.12);
+    letter-spacing: .08em;
+  }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">Portfolio · Mood Visual · Higgsfield × Pollinations Combined</div>
+  <h1>행군 <span style="color:var(--dust);font-weight:400;">Dust Below</span></h1>
+  <div class="sub">
+    기후 붕괴 이후 사막화된 한반도. 감염된 망자들이 모래 아래서 기어 올라오는 황폐한 대륙에서, 마지막 생존 부대가 오아시스 요새를 향한 최후의 행군을 시작한다.
+  </div>
+  <div class="meta">
+    <span><b>톤 앵커</b>드라마 택배기사</span>
+    <span><b>장르</b>포스트 아포칼립스 좀비 액션</span>
+    <span><b>포맷</b>ARRI Alexa 65 · Anamorphic · 35mm Film Grain</span>
+  </div>
+  <div class="palette" title="색 팔레트">
+    <i style="background:#c65d2e"></i>
+    <i style="background:#d4a55a"></i>
+    <i style="background:#8a8578"></i>
+    <i style="background:#6b0e0e"></i>
+    <i style="background:#2a3d5c"></i>
+    <i style="background:#0f0f12"></i>
+  </div>
+</header>
+
+<section>
+  <div class="scene-sub">Scene 01</div>
+  <h2 class="scene-title">행군 — 사막 와이드, 생존자 부대 진입</h2>
+  <div class="grid five">
+    <div class="cell">
+      <div class="opt">A · Wide</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene1-A.webp" alt="scene1-A higgs" />
+      <div class="label">부대 행군 · 모래폭풍</div>
+    </div>
+    <div class="cell">
+      <div class="opt">A · Wide</div>
+      <div class="src polli">Polli</div>
+      <img src="generated/scene1-A.png" alt="scene1-A polli" />
+      <div class="label">부대 행군 · 대체 톤</div>
+    </div>
+    <div class="cell">
+      <div class="opt">B · Hero</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene1-B.webp" alt="scene1-B higgs" />
+      <div class="label">히어로 · AK47 조준</div>
+    </div>
+    <div class="cell">
+      <div class="opt">C · Action</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene1-C.webp" alt="scene1-C higgs" />
+      <div class="label">폐차 사이 추격 트래킹</div>
+    </div>
+    <div class="cell">
+      <div class="opt">C · Action</div>
+      <div class="src polli">Polli</div>
+      <img src="generated/scene1-C.png" alt="scene1-C polli" />
+      <div class="label">추격 트래킹 · 대체 톤</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="scene-sub">Scene 02</div>
+  <h2 class="scene-title">저격 — 폐건물 옥상 단독 포인트</h2>
+  <div class="grid six">
+    <div class="cell">
+      <div class="opt">A · Wide</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene2-A.webp" alt="scene2-A higgs" />
+      <div class="label">옥상 프론 · 사막 황톤</div>
+    </div>
+    <div class="cell">
+      <div class="opt">A · Wide</div>
+      <div class="src polli">Polli</div>
+      <img src="generated/scene2-A.png" alt="scene2-A polli" />
+      <div class="label">옥상 프론 자세 · 대체 톤</div>
+    </div>
+    <div class="cell">
+      <div class="opt">B · Scope POV</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene2-B.webp" alt="scene2-B higgs" />
+      <div class="label">스코프 POV · 황톤 감염체</div>
+    </div>
+    <div class="cell">
+      <div class="opt">B · Scope POV</div>
+      <div class="src polli">Polli</div>
+      <img src="generated/scene2-B.png" alt="scene2-B polli" />
+      <div class="label">스코프 조준 크리쳐</div>
+    </div>
+    <div class="cell">
+      <div class="opt">C · Detail</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene2-C.webp" alt="scene2-C higgs" />
+      <div class="label">탄피 이젝트 · 황톤</div>
+    </div>
+    <div class="cell">
+      <div class="opt">C · Impact</div>
+      <div class="src polli">Polli</div>
+      <img src="generated/scene2-C.png" alt="scene2-C polli" />
+      <div class="label">명중 여진 · 격추 파편</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="scene-sub">Scene 04</div>
+  <h2 class="scene-title">거점 — 사막 한가운데의 생존 기지 컨셉아트</h2>
+  <div class="grid">
+    <div class="cell">
+      <div class="opt">A · Tower</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene4-A.webp" alt="scene4-A higgs" />
+      <div class="label">반쯤 묻힌 아파트 요새</div>
+    </div>
+    <div class="cell">
+      <div class="opt">B · Interior</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene4-B.webp" alt="scene4-B higgs" />
+      <div class="label">실내 중정 · 의무소</div>
+    </div>
+    <div class="cell">
+      <div class="opt">C · Aerial</div>
+      <div class="src higgs">Higgs</div>
+      <img src="generated-higgs/scene4-C.webp" alt="scene4-C higgs" />
+      <div class="label">드론 조감 · 컨테이너 요새</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  M83 AI Artist Application · Mood Visual · Higgsfield Nano Banana × Pollinations FLUX · Kingdom-toned Korean Wasteland
+</footer>
+
+</body>
+</html>

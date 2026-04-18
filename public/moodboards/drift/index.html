@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>표류 Drift — Mood Board</title>
+<style>
+  :root {
+    --amber: #ffb347;
+    --gold: #ffd24a;
+    --space: #05070f;
+    --nebula: #2a1a4a;
+    --cold: #e8ecf0;
+    --cyan: #00e5ff;
+    --rust: #8a4a2b;
+    --paper: #eef1f7;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background:
+      radial-gradient(1400px 700px at 20% -10%, rgba(255,179,71,.18), transparent 60%),
+      radial-gradient(1000px 600px at 110% 30%, rgba(42,26,74,.45), transparent 60%),
+      radial-gradient(900px 600px at -10% 110%, rgba(0,229,255,.10), transparent 60%),
+      #05070f;
+    color: var(--paper);
+    font-family: "Pretendard", "Inter", "Malgun Gothic", sans-serif;
+    letter-spacing: -0.01em;
+  }
+  header {
+    padding: 64px 56px 32px;
+    border-bottom: 1px solid rgba(255,179,71,.18);
+  }
+  header .tag {
+    font-size: 12px;
+    letter-spacing: .32em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+  header h1 {
+    font-size: 54px;
+    margin: 14px 0 8px;
+    font-weight: 800;
+    line-height: 1.05;
+  }
+  header .sub {
+    color: #a9b1c2;
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 780px;
+  }
+  .meta {
+    display: flex;
+    gap: 28px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #c2c8d4;
+  }
+  .meta span b {
+    color: var(--amber);
+    margin-right: 6px;
+  }
+  .palette {
+    display: flex;
+    gap: 6px;
+    margin-top: 20px;
+  }
+  .palette i {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0,0,0,.6);
+  }
+  section {
+    padding: 44px 56px;
+  }
+  .scene-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .scene-sub {
+    font-size: 13px;
+    color: var(--amber);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .cell {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #0d0f1a;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(255,179,71,.18);
+    box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  }
+  .cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+  }
+  .cell:hover img { transform: scale(1.04); }
+  .cell .label {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    font-size: 12px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: rgba(5,7,15,.78);
+    color: var(--paper);
+    letter-spacing: .14em;
+    border: 1px solid rgba(255,179,71,.25);
+    backdrop-filter: blur(8px);
+  }
+  .cell .opt {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 11px;
+    letter-spacing: .22em;
+    color: var(--amber);
+    background: rgba(5,7,15,.72);
+    padding: 4px 9px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  footer {
+    padding: 44px 56px 88px;
+    color: #6f7689;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,179,71,.12);
+    letter-spacing: .08em;
+  }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">Mood Visual · Hard Sci-Fi</div>
+  <h1>표류 <span style="color:var(--amber);font-weight:400;">Drift</span></h1>
+  <div class="sub">
+    연락이 두절된 우주선 조사를 나선 보험사 직원.
+    사고로 낯선 항성계 한복판에 떨어진다.
+  </div>
+  <div class="meta">
+    <span><b>톤 앵커</b>프로젝트 헤일메리 · 그래비티 · 애드 아스트라</span>
+    <span><b>장르</b>하드 SF · 단독 성간 미션</span>
+    <span><b>포맷</b>ARRI Alexa 65 · Anamorphic · 35mm Film Grain</span>
+  </div>
+  <div class="palette" title="색 팔레트">
+    <i style="background:#ffb347"></i>
+    <i style="background:#ffd24a"></i>
+    <i style="background:#e8ecf0"></i>
+    <i style="background:#00e5ff"></i>
+    <i style="background:#2a1a4a"></i>
+    <i style="background:#8a4a2b"></i>
+    <i style="background:#05070f"></i>
+  </div>
+</header>
+
+<section>
+  <div class="scene-sub">Scene 01 · 각성</div>
+  <h2 class="scene-title">함선 내부</h2>
+  <div class="grid">
+    <div class="cell">
+      <div class="opt">A · Wide</div>
+      <img src="generated-higgs/scene1-A_wide.webp" alt="scene1-A wide" />
+      <div class="label">구체형 함선 내부 · 인공중력 모듈</div>
+    </div>
+    <div class="cell">
+      <div class="opt">C · Detail</div>
+      <img src="generated-higgs/scene1-C_detail.webp" alt="scene1-C detail" />
+      <div class="label">아스트로페이지 배양기 · HUD 인터페이스</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="scene-sub">Scene 02 · 표류</div>
+  <h2 class="scene-title">표류</h2>
+  <div class="grid">
+    <div class="cell">
+      <div class="opt">B · Hero</div>
+      <img src="generated-higgs/scene2-B_hero.webp" alt="scene2-B hero" />
+      <div class="label">우주 유영 단독 · 별빛 속 고독</div>
+    </div>
+    <div class="cell">
+      <div class="opt">C · Detail</div>
+      <img src="generated-higgs/scene2-C_detail.webp" alt="scene2-C detail" />
+      <div class="label">부서진 탐사 프로브 · 앰버 미립자</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="scene-sub">Scene 03 · 조우</div>
+  <h2 class="scene-title">외계 항성계</h2>
+  <div class="grid">
+    <div class="cell">
+      <div class="opt">A · Wide</div>
+      <img src="generated-higgs/scene3-A_wide.webp" alt="scene3-A wide" />
+      <div class="label">고리 가진 가스 행성 · 함선 접근</div>
+    </div>
+    <div class="cell">
+      <div class="opt">B · Hero</div>
+      <img src="generated-higgs/scene3-B_hero.webp" alt="scene3-B hero" />
+      <div class="label">항성 코로나 역광 · 실루엣 대치</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Higgsfield Nano Banana · 16:9 · Project Hail Mary toned hard sci-fi mood visual
+</footer>
+
+</body>
+</html>

@@ -162,6 +162,23 @@ export interface MoodBoardItem {
 
 export const moodboards: MoodBoardItem[] = [
   {
+    id: "drift",
+    titleKo: "표류",
+    titleEn: "Drift",
+    subtitle:
+      "연락이 두절된 우주선 조사를 나선 보험사 직원. 사고로 낯선 항성계 한복판에 떨어진다.",
+    cover: "/moodboards/drift/generated-higgs/scene2-B_hero.webp",
+    thumbs: [
+      "/moodboards/drift/generated-higgs/scene1-A_wide.webp",
+      "/moodboards/drift/generated-higgs/scene2-B_hero.webp",
+      "/moodboards/drift/generated-higgs/scene3-A_wide.webp",
+      "/moodboards/drift/generated-higgs/scene3-B_hero.webp",
+    ],
+    toneAnchor: "프로젝트 헤일메리",
+    genre: "하드 SF · 단독 성간 미션",
+    url: "/moodboards/drift/index.html",
+  },
+  {
     id: "dust-below",
     titleKo: "행군",
     titleEn: "Dust Below",

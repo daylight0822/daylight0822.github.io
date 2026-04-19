@@ -162,6 +162,23 @@ export interface MoodBoardItem {
 
 export const moodboards: MoodBoardItem[] = [
   {
+    id: "oracle",
+    titleKo: "오라클",
+    titleEn: "Oracle",
+    subtitle:
+      "접신(接神)이 전파가 되고, 굿당이 서버룸이 된 시대. 마지막 아날로그 영매가 디지털 오라클 시스템의 균열을 추적한다.",
+    cover: "/moodboards/oracle/generated-higgs/scene2-B_hero.webp",
+    thumbs: [
+      "/moodboards/oracle/generated-higgs/scene1-A_wide.webp",
+      "/moodboards/oracle/generated-higgs/scene2-A_wide.webp",
+      "/moodboards/oracle/generated-higgs/scene3-A_wide.webp",
+      "/moodboards/oracle/generated-higgs/scene3-B_hero.webp",
+    ],
+    toneAnchor: "에스파 아마겟돈 · 파묘",
+    genre: "K-사이버펑크 · 패션필름",
+    url: "/moodboards/oracle/index.html",
+  },
+  {
     id: "drift",
     titleKo: "표류",
     titleEn: "Drift",

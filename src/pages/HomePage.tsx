@@ -5,7 +5,6 @@ import Career from "../components/Career";
 import Works from "../components/Works";
 import AICinema from "../components/AICinema";
 import MoodBoards from "../components/MoodBoards";
-import Tools from "../components/Tools";
 import Gallery from "../components/Gallery";
 import Footer from "../components/Footer";
 
@@ -19,7 +18,6 @@ export default function HomePage() {
       <Works />
       <AICinema />
       <MoodBoards />
-      <Tools />
       <Gallery />
       <Footer />
     </>

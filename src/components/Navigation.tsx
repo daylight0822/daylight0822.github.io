@@ -9,6 +9,7 @@ const navItems = [
   { label: "WORKS", target: "works" },
   { label: "AI WORKS", target: "ai-works" },
   { label: "MOODBOARDS", target: "moodboards" },
+  { label: "TOOLS", target: "tools" },
   { label: "GALLERY", target: "gallery" },
 ];
 

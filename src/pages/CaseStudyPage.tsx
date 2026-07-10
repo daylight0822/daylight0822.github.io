@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, X, ExternalLink, Calendar, Tag } from "lucide-react";
@@ -6,7 +6,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { caseStudyPosts } from "../data/content";
 import { loadProcessPosts, loadThoughtsPosts } from "../utils/journal";
-import type { CaseStudyEmbed } from "../data/content";
+import type { CaseStudyEmbed, CaseStudyMedia } from "../data/content";
 import type { JournalPost } from "../utils/journal";
 
 type TabType = "process" | "thoughts";
@@ -46,25 +46,58 @@ function EmbedCard({ embed }: { embed: CaseStudyEmbed }) {
   );
 }
 
-function renderContent(content: string, embeds?: CaseStudyEmbed[]) {
-  if (!embeds || embeds.length === 0) {
+function MediaCard({ media }: { media: CaseStudyMedia }) {
+  const base = import.meta.env.BASE_URL || "/";
+  const src = media.src.startsWith("http")
+    ? media.src
+    : `${base}${media.src.replace(/^\//, "")}`;
+  return (
+    <figure className="my-7">
+      <img
+        src={src}
+        alt={media.caption}
+        loading="lazy"
+        className="w-full rounded-xl border border-border bg-bg-elevated"
+      />
+      <figcaption className="text-text-muted text-xs leading-relaxed mt-3 text-center">
+        {media.caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function renderContent(
+  content: string,
+  embeds?: CaseStudyEmbed[],
+  media?: CaseStudyMedia[],
+) {
+  if ((!embeds || embeds.length === 0) && (!media || media.length === 0)) {
     return <span className="whitespace-pre-line">{content}</span>;
   }
 
-  const parts = content.split(/\{\{embed:(\d+)\}\}/);
-  return parts.map((part, i) => {
-    if (i % 2 === 1) {
-      const embedIndex = parseInt(part, 10);
-      const embed = embeds[embedIndex];
-      if (embed) return <EmbedCard key={`embed-${i}`} embed={embed} />;
-      return null;
+  const parts = content.split(/\{\{(embed|media):(\d+)\}\}/);
+  // split with two capture groups yields: [text, kind, index, text, kind, index, ...]
+  const out: ReactNode[] = [];
+  for (let i = 0; i < parts.length; i += 3) {
+    const text = parts[i];
+    if (text) {
+      out.push(
+        <span key={`text-${i}`} className="whitespace-pre-line">
+          {text}
+        </span>,
+      );
     }
-    return (
-      <span key={`text-${i}`} className="whitespace-pre-line">
-        {part}
-      </span>
-    );
-  });
+    const kind = parts[i + 1];
+    const idx = parts[i + 2];
+    if (kind === undefined) continue;
+    const n = parseInt(idx, 10);
+    if (kind === "embed" && embeds?.[n]) {
+      out.push(<EmbedCard key={`embed-${i}`} embed={embeds[n]} />);
+    } else if (kind === "media" && media?.[n]) {
+      out.push(<MediaCard key={`media-${i}`} media={media[n]} />);
+    }
+  }
+  return out;
 }
 
 function TabButton({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) {
@@ -329,7 +362,11 @@ export default function CaseStudyPage() {
                   </h2>
                 </div>
                 <div className="text-text/80 text-sm leading-[1.9]">
-                  {renderContent(activeCodePost.content, activeCodePost.embeds)}
+                  {renderContent(
+                    activeCodePost.content,
+                    activeCodePost.embeds,
+                    activeCodePost.media,
+                  )}
                 </div>
               </motion.div>
             </div>

@@ -391,12 +391,61 @@ export const works: WorkItem[] = [
   },
 ];
 
+// ===== TOOLS (직접 만든 제작 도구) =====
+export interface ToolShot {
+  src: string;
+  caption: string;
+}
+
+export interface ToolItem {
+  id: string;
+  title: string;
+  titleAccent?: string;
+  subtitle: string;
+  description: string;
+  gifCaption: string;
+  tags: string[];
+  gif: string;
+  shots: ToolShot[];
+}
+
+export const tools: ToolItem[] = [
+  {
+    id: "production-board",
+    title: "Production",
+    titleAccent: "Board",
+    subtitle: "AI 영상 제작 협업 보드",
+    description:
+      "AI로 영상을 만들 때 흩어지기 쉬운 기획·촬영·후반 작업을 한곳에서 관리하려고 직접 설계한 제작 보드입니다. 프리 → 프로덕션 → 포스트 3단계로, 로그라인·캐릭터·인물관계도·스토리보드부터 후반작업 체크리스트까지 담았습니다. 특히 프로덕션 단계에서는 컷마다 쌓인 결과물을 OK로 채택하면 위쪽 러프 컷에 바로 채워지고, 컷 길이를 정하면 이어보기에 반영돼 — 아래에서 고른 컷이 위에서 하나의 흐름으로 조립되는 걸 미리 볼 수 있게 만들었습니다.",
+    gifCaption: "러프 컷 — 아래 컷에서 결과물을 OK로 채택하면 위 러프컷에 채워지고, 컷 길이를 정하면 이어보기에 반영된다 (실제 화면)",
+    tags: ["React", "TypeScript", "Vite", "Electron", "로컬 저장"],
+    gif: "/tools/production-board/roughcut-trim.gif",
+    shots: [
+      { src: "/tools/production-board/01-new-project.png", caption: "① 프로젝트 시작 — 영화·드라마·광고·MV 종류별로 구성이 달라짐" },
+      { src: "/tools/production-board/02-preproduction.png", caption: "② 설정/시나리오 — 로그라인·세계관·시놉시스 문서 정리" },
+      { src: "/tools/production-board/07-characters.png", caption: "③ 캐릭터 — 인물의 외형·성격·의상을 이미지와 함께 정리" },
+      { src: "/tools/production-board/08-character-profile.png", caption: "④ 캐릭터 설정 — 배경 서사·목표·갈등·인물 변화(아크) 정리" },
+      { src: "/tools/production-board/09-relations.png", caption: "⑤ 인물관계도 — 카드를 끌어 배치하고 관계선·메모로 연결" },
+      { src: "/tools/production-board/10-backgrounds.png", caption: "⑥ 배경 — 로케이션의 실내/외·스타일·톤을 이미지로 정리" },
+      { src: "/tools/production-board/03-storyboard.png", caption: "⑦ 스토리보드 — 컷별 샷 사이즈·앵글·렌즈·인물 블로킹 설계" },
+      { src: "/tools/production-board/05-takes.png", caption: "⑧ 프로덕션 — 컷마다 여러 결과물(테이크)을 올리고 OK/NG로 채택" },
+      { src: "/tools/production-board/04-roughcut.png", caption: "⑨ 러프 컷 — 채택 컷을 순서대로 이어보는 미리보기 플레이어" },
+      { src: "/tools/production-board/06-post.png", caption: "⑩ 포스트 — 모션·CG·색보정·사운드 후반작업 체크보드" },
+    ],
+  },
+];
+
 // ===== CASE STUDY POSTS =====
 export interface CaseStudyEmbed {
   title: string;
   description: string;
   href: string;
   tag: string;
+}
+
+export interface CaseStudyMedia {
+  src: string;
+  caption: string;
 }
 
 export interface CaseStudyPost {
@@ -407,11 +456,42 @@ export interface CaseStudyPost {
   content: string;
   externalUrl?: string;
   embeds?: CaseStudyEmbed[];
+  media?: CaseStudyMedia[];
 }
 
 export const caseStudyPosts: CaseStudyPost[] = [
   // 새 글을 추가하려면 여기에 같은 형식으로 넣으면 됩니다.
   // GitHub 웹에서 이 파일을 편집하고 저장하면 자동 배포됩니다.
+  {
+    id: "production-board-rough-cut",
+    date: "2026.07",
+    title: "제작 보드를 직접 만들다 — 러프 컷은 여기서 잘라 붙인다",
+    excerpt:
+      "AI로 컷을 뽑고 나면 늘 '그래서 이걸 어떤 길이로, 어떤 순서로 붙일까'가 흩어졌다. 그래서 채택한 컷을 그 자리에서 트리밍하고 순서대로 이어붙여 흐름을 미리 보는 러프 컷 기능을 제작 보드 안에 직접 만들었다.",
+    media: [
+      {
+        src: "/tools/production-board/roughcut-trim.gif",
+        caption: "실제 화면 — 아래 컷 카드에서 결과물을 ⭐채택(OK)하면 위 러프컷 필름스트립과 이어보기 플레이어에 그 컷이 채워진다. 컷마다 길이(듀레이션)를 정하면 이어보기 길이에 반영된다.",
+      },
+    ],
+    content: `AI로 영상을 만들다 보면 도구가 흩어진다. 이미지는 미드저니, 모션은 Higgsfield·Kling, 편집은 프리미어. 컷 하나를 뽑기까지는 잘 굴러가는데, 정작 "이 컷들을 어떤 길이로, 어떤 순서로 붙여야 이야기가 되는가"는 어디에도 안 남았다. 매번 새 프로젝트마다 엑셀과 폴더와 머릿속으로 흩어졌다.
+
+그래서 제작 과정을 한곳에 담는 보드를 직접 만들기 시작했다. 프리프로덕션(로그라인·캐릭터·인물관계도·스토리보드) → 프로덕션(컷별 테이크 관리) → 포스트프로덕션(후반 체크리스트)까지, 실제 내가 일하는 순서를 그대로 화면으로 옮겼다.
+
+{{media:0}}
+
+가장 만들고 싶었던 건 '러프 컷' 단계였다.
+
+AI로 컷을 뽑으면 한 컷당 결과물(테이크)이 여러 개 쌓인다. 그중 쓸 것을 고르는 일과, 그 컷들을 어떤 길이·순서로 붙일지 정하는 일이 늘 따로 놀았다. 그래서 화면을 위아래로 나눴다.
+
+아래에는 컷별 작업 카드가 있다. 한 컷에 올린 여러 테이크를 NG·Keep·OK로 평가하고, 가장 좋은 것을 ⭐채택하면 그 컷이 '완성 후보'로 확정된다. 채택하는 순간, 위쪽 러프 컷 필름스트립과 이어보기 플레이어에 그 컷이 바로 채워진다 — 아래에서 고른 결과가 위에서 하나의 흐름으로 조립되는 것이다.
+
+컷마다 길이(듀레이션)도 정할 수 있다. 이미지 컷은 몇 초 보여줄지, 영상 컷은 IN/OUT으로 쓸 구간만, 을 정하면 위 이어보기의 전체 길이에 그대로 반영된다. 그래서 프리미어를 열기 전에, 컷의 길이와 순서를 값싸게 실험하며 "이 흐름이 말이 되는가"를 러프하게 먼저 볼 수 있다.
+
+거창한 편집 프로그램을 대체하려는 게 아니다. AI로 컷을 뽑는 리듬과 편집을 시작하는 리듬 사이에, 늘 비어 있던 '길이와 순서를 정리하는' 한 칸을 채우는 도구다.
+
+React·TypeScript·Vite로 만들었고, 이미지·영상은 브라우저 안에 로컬로 저장되어 로그인 없이 바로 쓸 수 있다. Electron으로 감싸 데스크톱 앱으로도 실행된다.`,
+  },
   {
     id: "comfyui-workflow-design",
     date: "2026.04",

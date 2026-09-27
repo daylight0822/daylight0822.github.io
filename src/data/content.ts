@@ -62,6 +62,13 @@ export interface CareerItem {
 
 export const careers: CareerItem[] = [
   {
+    period: "2026.05 — 현재",
+    title: "PM",
+    company: "덱스터스튜디오 · 실감콘텐츠본부 프로덕션팀",
+    description:
+      "2026 그랜드조선호텔 아나모픽 콘텐츠, 신라왕경 디지털 복원 사업 3D 콘텐츠 제작 및 관리 업무.",
+  },
+  {
     period: "2023.11 — 2025.02",
     title: "기획 PD",
     company: "스튜디오브이플러스",

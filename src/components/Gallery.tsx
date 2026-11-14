@@ -115,13 +115,13 @@ export default function Gallery() {
           >
             <div className="divider-line mb-12" />
             <p className="text-text-muted text-sm tracking-wider mb-6">
-              AI 영상 제작에 대한 생각과 기록
+              프로젝트 도깨비 · 도구, 시행착오, 제작 과정
             </p>
             <Link
               to="/case-study"
               className="inline-flex items-center gap-3 text-accent text-sm tracking-[0.2em] font-medium border border-accent/30 hover:border-accent hover:bg-accent/5 px-8 py-3.5 rounded-full transition-all duration-300 no-underline"
             >
-              CASE STUDY →
+              도깨비 제작 과정 →
             </Link>
           </motion.div>
         </div>

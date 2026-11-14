@@ -187,7 +187,7 @@ export default function Navigation() {
             onClick={() => navigate("/case-study")}
             className="text-xs tracking-[0.15em] text-accent border border-accent/30 hover:border-accent hover:bg-accent/5 px-4 py-2 rounded-full font-medium transition-all duration-300"
           >
-            CASE STUDY
+            PRODUCTION
           </button>
         </div>
 
@@ -226,7 +226,7 @@ export default function Navigation() {
                 }}
                 className="text-left text-sm tracking-[0.15em] text-accent hover:text-accent-dim transition-colors font-medium"
               >
-                CASE STUDY →
+                PRODUCTION →
               </button>
               <div className="flex items-center gap-3">
                 <ThemeToggle theme={theme} onToggle={toggleTheme} size="mobile" />

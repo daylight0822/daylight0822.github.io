@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight, Check, Clock3 } from "lucide-react";
 
 const boardShots: Record<string, { src: string; caption: string }> = {
   "01": { src: "board-planning-20261108.jpg", caption: "초기 오프라인 보드 v1 · 기획 및 설정 화면. 실제 보관본을 실행해 캡처. 메뉴 분류와 수정·저장 위치 확인용이며, 현재 시나리오와는 차이가 있음." },
+  "02": { src: "ara-night-concept.jpg", caption: "초기 보드에서 채택된 아라 야간 컨셉. 하회탈·열린 적색 두루마기·트레이닝복·현대 서울 야간 룩 검토용. 최종 영상 프레임이 아니며, 백자 문양과 수납 연출은 이후 수정됨." },
   "06": { src: "board-storyboard-early.jpg", caption: "초기 오프라인 보드 v1 · 콘티 이미지 화면. 콘티 시트와 미검수·불일치 메모를 함께 배치한 실제 화면. 최신 인덱스 3 화면이 아님." },
 };
 const stages = [

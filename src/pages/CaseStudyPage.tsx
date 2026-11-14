@@ -37,8 +37,28 @@ export default function CaseStudyPage() {
         </>}
       </header>
       <nav aria-label="제작 공정 메뉴" className="grid grid-cols-2 md:grid-cols-3 gap-2 my-8">{menus.map(m => <Link key={m.id} to={`?menu=${m.id}`} aria-current={active === m.id ? "page" : undefined} className={`border rounded-lg p-3 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent ${active === m.id ? "border-accent text-accent bg-accent/5" : "border-border text-text-dim hover:border-accent"}`}>{m.title}</Link>)}</nav>
-      <div key={active}>
-      {active === "overview" && <>      <section className="py-12 grid md:grid-cols-[1fr_2fr] gap-8 border-b border-border"><h2 className="text-xl font-semibold">담당 업무 및<br/>AI 협업 범위</h2><div className="space-y-5 text-sm leading-7 text-text-dim"><p><strong className="text-text">구다영 담당 업무.</strong> 캐릭터·세계관·복식 방향, 컷 순서와 사이즈, 시선·동선·대사·타이밍 결정 및 결과물 검수. 수정 요청 시 문제 위치와 동작, 비례, 타이밍 등 구체적인 조건을 정리함.</p><p><strong className="text-text">AI 협업 업무.</strong> 대본·프롬프트 초안 작성, 이미지 생성, Blender 스크립트 기반 블록아웃, 보드 구현 및 자료 정리 보조. 모델링·코딩은 AI 협업으로 수행한 범위이며, 단독 수작업 실적과 구분함.</p></div></section>
+      <div key={active}>      {active === "overview" && <>
+      <section className="py-10 grid md:grid-cols-[220px_1fr] gap-6 md:gap-12 border-b border-border">
+        <h2 className="text-xl font-semibold">작품 기획</h2>
+        <div className="space-y-5 text-sm leading-7 text-text-dim">
+          <p className="text-lg leading-8 text-text">낮에는 평범한 공무원, 밤에는 도깨비로 활동하는 아라와 그녀를 쫓는 직감형 형사 진영의 판타지 로맨틱 코미디.</p>
+          <p><strong className="text-text">배경 및 세계관.</strong> 고궁·박물관·현대 건물이 공존하는 가상의 서울로 설정. 도깨비는 봉인된 존재가 아니라, 오래된 물건에 깃들어 잠들어 있다가 아라가 깨우면 나타나는 엉뚱하고 귀여운 존재로 정리함.</p>
+          <p><strong className="text-text">인물 및 관계.</strong> 아라는 반은 사람, 반은 도깨비인 공무원. 평소에는 말이 많지만 정체를 들킬까 봐 진영 앞에서는 말을 아낌. 진영은 이를 자신을 좋아해서라고 오해함. 밤의 추격과 낮의 도깨비 검거 TF 업무가 겹치면서 정체를 숨기는 긴장과 로맨틱 코미디가 함께 진행되는 구조.</p>
+          <p><strong className="text-text">시각 방향.</strong> 현대 서울의 밤에 한국 하회탈·남자 두루마기·흰 동정을 결합. 아라의 일상 복장과 도깨비 활동 시의 트레이닝복·열린 두루마기를 분리하고, 한국적인 복식과 건축 요소가 유지되도록 검수함.</p>
+          <p><strong className="text-text">우선 제작 범위.</strong> 16:9 숏드라마로 기획하되 전체 회차보다 박물관 잠입과 추격이 있는 1씬을 먼저 제작. 경비초소, 수장고, 인물 동선과 소품 동작을 통해 실사 룩·행동 제어·컷 간 연속성을 단계별로 확인함.</p>
+          <p className="text-xs text-text-muted">초기 오프라인 보드의 기획·설정·전체 줄거리와 이후 확정된 제작 방향을 함께 정리. 아라의 정확한 소속·직함, 유물을 모아야 하는 필연적 이유, 시즌 결말은 보관본 기준 미정으로 남겨둠.</p>
+        </div>
+      </section>
+      <section className="py-10 grid md:grid-cols-[220px_1fr] gap-6 md:gap-12 border-b border-border">
+        <h2 className="text-xl font-semibold">AI 드라마 제작<br/>고려사항 및 준비</h2>
+        <div className="space-y-5 text-sm leading-7 text-text-dim">
+          <p><strong className="text-text">컷 단위 제작 설계.</strong> 시나리오를 행동·화각·렌즈·길이·소리 단위로 나누고 S01C01 형식의 번호 부여. 컷을 병합하거나 삭제할 때 기존 번호와 수정 이력을 함께 관리해 편집 시 혼선 방지.</p>
+          <p><strong className="text-text">참조 자료 분리.</strong> 인물의 정면·측면·전신, 의상, 공간, 소품을 별도로 준비. 블로킹은 구도·동선·액션, 실사 콘티는 인물·재질·라이팅을 전달하도록 역할을 구분함. 낮은 디테일의 3D 질감이 최종 영상에 남는 문제를 줄이기 위한 기준.</p>
+          <p><strong className="text-text">공간 및 동작 검증.</strong> 인물 크기와 층고, 문·선반·출입구 배치, 시선과 이동 방향을 먼저 확인. 손 클로즈업은 손가락·관절·손목 방향까지 검토하고, 고정 구조물과 움직이는 소품을 분리해 벽 관통·받침대 동시 이동 등의 오류 점검.</p>
+          <p><strong className="text-text">생성 및 편집 준비.</strong> 복잡한 행동을 시간 구간으로 나누어 프롬프트 작성. 생성 결과가 지시한 타이밍과 일치하는지 프레임별로 확인하고, 수정할 컷만 교체할 수 있도록 원본 클립과 순편 프로젝트를 분리함. 음성·효과음·앰비언스는 직접 청취 후 검수.</p>
+          <p><strong className="text-text">자료 관리 및 채택 기준.</strong> 보드에서 컷별 이미지·영상·수정 메모를 연결하고 생성·검수·채택·반영 상태를 구분. 모델링·코딩을 포함한 AI 협업 범위와 실제 사용 도구를 기록하며, 파일 생성만으로 완성 처리하지 않음.</p>
+        </div>
+      </section>
       <aside className="my-10 border-l-2 border-accent pl-6"><p className="text-xl md:text-2xl leading-relaxed font-medium">블로킹: 구도·액션·동선 확인용.<br/>실사 콘티: 인물·재질·라이팅 참조용.</p><p className="mt-3 text-sm text-text-muted">영상 생성 테스트 후 참조 자료의 용도를 분리하기로 정리함.</p></aside>
 </>}
       <section aria-label="공정별 제작 기록">{stages.filter(s => s.n === active).map(s=><article id={`stage-${s.n}`} key={s.n} className="scroll-mt-6 py-12 border-t border-border grid md:grid-cols-[220px_1fr] gap-6 md:gap-12"><div><span className="text-4xl text-accent font-light">{s.n}</span><p className="mt-4 text-xs text-text-muted leading-6">{s.tool}</p></div><div><h2 className="text-2xl font-semibold mb-5">{s.title}</h2><p className="text-text-dim text-sm leading-7">{s.body}</p><details className="mt-4 rounded-lg border border-border p-4"><summary className="cursor-pointer text-sm text-accent">세부 조치 및 산출물</summary><p className="text-text-dim text-sm leading-7 mt-4">{s.decision}</p><p className="mt-4 text-sm text-text-dim"><span className="text-accent text-xs block mb-2">작업 산출물</span>{s.output}</p></details>{boardShots[s.n] && <figure className="mt-7"><img src={`dokkaebi/${boardShots[s.n].src}`} alt={boardShots[s.n].caption} loading="lazy" className="w-full h-auto rounded-lg border border-border"/><figcaption className="text-xs text-text-muted leading-6 mt-3">{boardShots[s.n].caption}</figcaption></figure>}</div></article>)}</section>

@@ -10,10 +10,18 @@ export const profile = {
 export interface AICinemaItem {
   id: string;
   title: string;
-  youtubeUrl: string;
+  youtubeUrl?: string;
+  videoUrl?: string;
+  thumbnail?: string;
 }
 
 export const aiCinema: AICinemaItem[] = [
+  {
+    id: "dokkaebi-00",
+    title: "도깨비",
+    youtubeUrl: "https://youtu.be/dYAOH1_Q948",
+    thumbnail: "/dokkaebi/title-thumbnail.jpg",
+  },
   {
     id: "ai-1",
     title: "가장 오래된 것",

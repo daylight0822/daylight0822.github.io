@@ -28,10 +28,10 @@ export default function AICinema() {
   const next = () => go((current + 1) % aiCinema.length);
 
   const item = aiCinema[current];
-  const videoId = getYoutubeId(item.youtubeUrl);
-  const thumb = videoId
+  const videoId = getYoutubeId(item.youtubeUrl ?? "");
+  const thumb = item.thumbnail ?? (videoId
     ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
-    : "";
+    : "");
 
   return (
     <section id="ai-works" className="py-32 px-5 md:px-10 bg-bg-card/50">
@@ -65,7 +65,15 @@ export default function AICinema() {
                 transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
                 className="relative aspect-video"
               >
-                {playing && videoId ? (
+                {playing && item.videoUrl ? (
+                  <video
+                    src={item.videoUrl}
+                    poster={thumb}
+                    controls autoPlay playsInline preload="metadata"
+                    aria-label={item.title}
+                    className="w-full h-full object-contain bg-black"
+                  />
+                ) : playing && videoId ? (
                   /* 인라인 재생 */
                   <iframe
                     src={`https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&hd=1`}
@@ -76,8 +84,10 @@ export default function AICinema() {
                   />
                 ) : (
                   /* 썸네일 + 플레이 버튼 */
-                  <div
-                    className="relative w-full h-full cursor-pointer group"
+                  <button
+                    type="button"
+                    aria-label={`${item.title} 재생`}
+                    className="relative w-full h-full cursor-pointer group text-left"
                     onClick={() => setPlaying(true)}
                   >
                     {thumb && (
@@ -96,7 +106,7 @@ export default function AICinema() {
                     <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-bg/80 to-transparent">
                       <p className="text-text font-semibold text-lg">{item.title}</p>
                     </div>
-                  </div>
+                  </button>
                 )}
               </motion.div>
             </AnimatePresence>
@@ -104,12 +114,14 @@ export default function AICinema() {
 
           {/* 화살표 — 호버 시 표시 */}
           <button
+            aria-label="이전 작품"
             onClick={prev}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-bg-elevated/80 backdrop-blur-sm border border-border flex items-center justify-center hover:border-accent/50 transition-all duration-200 z-10 opacity-0 group-hover/carousel:opacity-100"
           >
             <ChevronLeft size={18} className="text-text" />
           </button>
           <button
+            aria-label="다음 작품"
             onClick={next}
             className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-bg-elevated/80 backdrop-blur-sm border border-border flex items-center justify-center hover:border-accent/50 transition-all duration-200 z-10 opacity-0 group-hover/carousel:opacity-100"
           >
@@ -119,21 +131,22 @@ export default function AICinema() {
 
         {/* 화질 안내 */}
         <p className="text-text-muted text-[13px] mt-3 text-right tracking-wide">
-          화질이 낮게 보인다면, 영상 재생 후 ⚙️ 설정에서 1080p를 선택하거나{" "}
-          <span className="text-text-dim">YouTube에서 직접 시청</span>해 주세요.
+          {item.videoUrl ? "전체 화면으로 확대하여 감상할 수 있습니다." : <>화질이 낮게 보인다면, 영상 재생 후 ⚙️ 설정에서 1080p를 선택하거나{" "}
+          <a href={item.youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-4">YouTube에서 직접 시청</a>해 주세요.</>}
         </p>
 
         {/* 썸네일 스트립 + 카운터 */}
         <div className="flex items-center justify-between mt-4">
           <div className="flex gap-2 flex-wrap">
             {aiCinema.map((v, i) => {
-              const vid = getYoutubeId(v.youtubeUrl);
-              const t = vid
+              const vid = getYoutubeId(v.youtubeUrl ?? "");
+              const t = v.thumbnail ?? (vid
                 ? `https://img.youtube.com/vi/${vid}/mqdefault.jpg`
-                : "";
+                : "");
               return (
                 <button
                   key={v.id}
+                  aria-label={`${v.title} 선택`}
                   onClick={() => go(i)}
                   className={`relative w-16 md:w-20 aspect-video rounded-lg overflow-hidden border transition-all duration-200 ${
                     i === current

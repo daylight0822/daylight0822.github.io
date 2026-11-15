@@ -27,7 +27,7 @@ function IterationPair({ title, before, after, beforeLabel = "수정 전", after
 const phases = [
   { id: "planning", title: "기획", label: "01 / PLANNING", first: "overview", items: ["overview", "01"], summary: "작품의 장르·세계관을 정리하고, 한 번에 만들 범위를 1씬으로 좁힘. 사건의 흐름을 컷 단위로 나눈 뒤 실제 제작 가능한 행동과 화면으로 구체화.", record: "기획 보관본 및 이후 대화 반영 · 확정 설정과 미정 항목 구분" },
   { id: "preproduction", title: "프리프로덕션", label: "02 / PRE-PRODUCTION", first: "02", items: ["02", "03", "04", "06"], summary: "인물·공간·소품 참조와 블로킹을 분리 준비. 공간 비례, 손·발, 인물의 시선과 이동 방향을 검수하며 수정. 실사 룩과 액션 설계의 역할을 나누고 동일 인덱스에 변경 이력 기록.", record: "11/09 초기 블로킹 → 11/12 v13 프리비즈 보관본 → 11/15 제공 인덱스 대조" },
-  { id: "production", title: "프로덕션", label: "03 / PRODUCTION", first: "05", items: ["05", "issues", "status"], summary: "실사 시작 이미지와 행동 프롬프트로 컷별 영상을 생성하고, 결과를 프레임 단위로 검토. 재생성 후보와 이전본을 분리해 순편에 연결. 생성 완료와 최종 채택은 별도로 관리.", record: "11/15 누적 생성·검수 기록 및 FilmCraft 38컷 순편 화면 확인 · 최종 편집 진행 중" },
+  { id: "production", title: "프로덕션", label: "03 / PRODUCTION", first: "05", items: ["05", "issues", "status"], summary: "실사 시작 이미지와 행동 프롬프트로 컷별 영상을 생성하고, 결과를 프레임 단위로 검토. 재생성 후보와 이전본을 분리해 순편에 연결. 생성 완료와 최종 채택은 별도로 관리.", record: "11/15 누적 생성·검수 기록 및 FilmCraft 38컷 순편 화면 확인 · 공개 편집본 별도 게시 · 계획 컷 일부 미생성" },
 ];
 export default function CaseStudyPage() {
   const [params] = useSearchParams();
@@ -49,6 +49,14 @@ export default function CaseStudyPage() {
       <nav aria-label="제작 상위 단계" className="grid grid-cols-3 gap-2 mt-8">{phases.map(p => <Link key={p.id} to={`?menu=${p.first}`} aria-current={phase.id === p.id ? "page" : undefined} className={`border rounded-xl p-3 md:p-5 transition-colors ${phase.id === p.id ? "border-accent bg-accent/5" : "border-border hover:border-accent"}`}><span className="hidden md:block text-[10px] tracking-widest text-text-muted mb-2">{p.label}</span><span className={`text-sm md:text-xl font-semibold ${phase.id === p.id ? "text-accent" : "text-text-dim"}`}>{p.title}</span></Link>)}</nav>
       <section aria-label={`${phase.title} 단계 요약`} className="py-7"><p className="max-w-[880px] text-sm text-text-dim leading-7">{phase.summary}</p><p className="text-xs text-text-muted mt-3 leading-6">기록 기준 · {phase.record}</p></section>
       <nav aria-label="세부 제작 단계" className="flex flex-wrap gap-2 mb-8">{menus.filter(m => phase.items.includes(m.id)).map(m => <Link key={m.id} to={`?menu=${m.id}`} aria-current={active === m.id ? "page" : undefined} className={`border rounded-lg px-4 py-3 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent ${active === m.id ? "border-accent text-accent bg-accent/5" : "border-border text-text-dim hover:border-accent"}`}>{m.title.replace(/^0[1-6] /, "")}</Link>)}</nav>
+      {(active === "overview" || active === "05" || active === "status") && <section className="my-8 p-5 md:p-7 rounded-xl border border-border bg-bg-card text-sm leading-7">
+        <h2 className="font-semibold text-lg mb-3">공개 편집본 · 제작 범위</h2>
+        <p className="text-text-dim">예산 제약으로 계획한 모든 컷을 생성하지는 못함. 현재 공개 영상은 확보한 결과물을 바탕으로 편집한 버전이며, 아직 미생성 컷이 남아 있음. 영상 출력 완료와 전체 콘티 제작 완료를 구분해 기록.</p>
+        <p className="text-text-dim mt-3">크레딧 절약을 위해 제작 중간에 일부 생성을 720p로 전환. 모든 컷이 같은 해상도로 제작된 것은 아니며, 비용과 화면 품질을 함께 고려해 범위 조정. 절감 비율과 실제 노동시간은 별도 측정하지 않음.</p>
+        <p className="text-text-dim mt-3">얼굴 일관성·과장된 연기·공간과 손발·소품 연속성은 컷별로 검수. 수정 지시와 실제 해결 여부를 구분하며, 정지 이미지 보정만으로 영상 전체의 오류가 해결됐다고 판단하지 않음.</p>
+        <p className="text-text-muted mt-3">자료 업로드·접근 과정의 403 및 환경별 전송 기능 제한은 생성 실패와 분리해 기록. 접근이 확인된 실제 자료만 사용하고, 미확보 작업 화면은 캡처 완료로 표시하지 않음.</p>
+        <a href="https://youtu.be/dYAOH1_Q948" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-accent underline underline-offset-4">도깨비 공개 편집본 보기</a>
+      </section>}
       <div key={active}>      {active === "overview" && <>
       <figure className="mb-9"><img src="dokkaebi/ara-night-concept.jpg" alt="기획 단계의 아라 야간 컨셉, 현대 서울과 한국 탈·두루마기 조합" className="w-full max-h-[520px] object-cover rounded-xl border border-border"/><figcaption className="text-xs text-text-muted mt-3 leading-6">초기 채택 컨셉으로 작품의 야간 룩 검토. 최종 영상 프레임이 아니며 백자 수납 방식 등은 이후 변경됨.</figcaption></figure>
       <section className="py-10 grid md:grid-cols-[220px_1fr] gap-6 md:gap-12 border-b border-border">

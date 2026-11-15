@@ -8,7 +8,7 @@ const navItems = [
   { label: "CAREER", target: "career" },
   { label: "WORKS", target: "works" },
   { label: "AI WORKS", target: "ai-works" },
-  { label: "도깨비 작업기", target: "moodboards" },
+  { label: "MOODBOARD", target: "moodboards" },
   { label: "GALLERY", target: "gallery" },
 ];
 

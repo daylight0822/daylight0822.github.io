@@ -92,7 +92,7 @@ export const careers: CareerItem[] = [
     badge: { src: "/gallery/plans/07-선정작.png", alt: "콘텐츠진흥원 기획안 공모사업 선정작 목록" },
   },
   {
-    period: "2021.09 — 2021.12",
+    period: "2021.10 — 2021.12",
     title: "편집감독",
     company: "웹드라마 <숨은 그놈 찾기>",
     description:
